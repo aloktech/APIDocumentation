@@ -1,0 +1,221 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Update the annotations on one or more resources
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            All Kubernetes objects support the ability to store additional data with the object as annotations. Annotations are key/value pairs that can be larger than labels and include arbitrary string values such as structured JSON. Tools and system extensions may use annotations to store their own data.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Attempting to set an annotation that already exists will fail unless --overwrite is set. If --resource-version is specified and does not match the current resource version on the server the command will fail.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl api-resources&quot; for a complete list of supported resources.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Update pod &#x27;foo&#x27; with the annotation &#x27;description&#x27; and the value &#x27;my frontend&#x27;.
+        </p>
+        <p style="font-size: 16;">
+            # If the same annotation is set multiple times, only the last value will be applied
+        </p>
+        <p style="font-size: 16;">
+            kubectl annotate pods foo description=&#x27;my frontend&#x27;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Update a pod identified by type and name in &quot;pod.json&quot;
+        </p>
+        <p style="font-size: 16;">
+            kubectl annotate -f pod.json description=&#x27;my frontend&#x27;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Update pod &#x27;foo&#x27; with the annotation &#x27;description&#x27; and the value &#x27;my frontend running nginx&#x27;, overwriting any existing value.
+        </p>
+        <p style="font-size: 16;">
+            kubectl annotate --overwrite pods foo description=&#x27;my frontend running nginx&#x27;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Update all pods in the namespace
+        </p>
+        <p style="font-size: 16;">
+            kubectl annotate pods --all description=&#x27;my frontend running nginx&#x27;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Update pod &#x27;foo&#x27; only if the resource is unchanged from version 1.
+        </p>
+        <p style="font-size: 16;">
+            kubectl annotate pods foo description=&#x27;my frontend running nginx&#x27; --resource-version=1
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Update pod &#x27;foo&#x27; by removing an annotation named &#x27;description&#x27; if it exists.
+        </p>
+        <p style="font-size: 16;">
+            # Does not require the --overwrite flag.
+        </p>
+        <p style="font-size: 16;">
+            kubectl annotate pods foo description-
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --all=false:
+            </label>
+            <label style="font-size: 16;">
+                Select all resources, including uninitialized ones, in the namespace of the specified resource types.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-missing-template-keys=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --dry-run=&#x27;none&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Must be &quot;none&quot;, &quot;server&quot;, or &quot;client&quot;. If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --field-selector=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Selector (field query) to filter on, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --filename=[]: Filename, directory, or URL to files identifying the resource to update the annotation
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -k,
+            </label>
+            <label style="font-size: 16;">
+                --kustomize=&#x27;&#x27;: Process the kustomization directory. This flag can&#x27;t be used together with -f or -R.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --local=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, annotation will NOT contact api-server but run locally.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --overwrite=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, allow annotations to be overwritten, otherwise reject annotation updates that overwrite existing annotations.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --record=false:
+            </label>
+            <label style="font-size: 16;">
+                Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -R,
+            </label>
+            <label style="font-size: 16;">
+                --recursive=false: Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --resource-version=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                If non-empty, the annotation update will only succeed if this is the current resource-version for the object. Only valid when specifying a single resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --selector=&#x27;&#x27;: Selector (label query) to filter on, not including uninitialized ones, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. -l key1=value1,key2=value2).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --template=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl annotate [--overwrite] (-f FILENAME | TYPE NAME) KEY_1=VAL_1 ... KEY_N=VAL_N [--resource-version=version] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

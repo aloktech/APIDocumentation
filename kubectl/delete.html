@@ -1,0 +1,263 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Delete resources by filenames, stdin, resources and names, or by resources and label selector.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            JSON and YAML formats are accepted. Only one type of the arguments may be specified: filenames, resources and names, or resources and label selector.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Some resources, such as pods, support graceful deletion. These resources define a default period before they are forcibly terminated (the grace period) but you may override that value with the --grace-period flag, or pass --now to set a grace-period of 1. Because these resources often represent entities in the cluster, deletion may not be acknowledged immediately. If the node hosting a pod is down or cannot reach the API server, termination may take significantly longer than the grace period. To force delete a resource, you must specify the --force flag. Note: only a subset of resources support graceful deletion. In absence of the support, --grace-period is ignored.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            IMPORTANT: Force deleting pods does not wait for confirmation that the pod&#x27;s processes have been terminated, which can leave those processes running until the node detects the deletion and completes graceful deletion. If your processes use shared storage or talk to a remote API and depend on the name of the pod to identify themselves, force deleting those pods may result in multiple processes running on different machines using the same identification which may lead to data corruption or inconsistency. Only force delete pods when you are sure the pod is terminated, or if your application can tolerate multiple copies of the same pod running at once. Also, if you force delete pods the scheduler may place new pods on those nodes before the node has released those resources and causing those pods to be evicted immediately.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Note that the delete command does NOT do resource version checks, so if someone submits an update to a resource right when you submit a delete, their update will be lost along with the rest of the resource.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Delete a pod using the type and name specified in pod.json.
+        </p>
+        <p style="font-size: 16;">
+            kubectl delete -f ./pod.json
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Delete resources from a directory containing kustomization.yaml - e.g. dir/kustomization.yaml.
+        </p>
+        <p style="font-size: 16;">
+            kubectl delete -k dir
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Delete a pod based on the type and name in the JSON passed into stdin.
+        </p>
+        <p style="font-size: 16;">
+            cat pod.json | kubectl delete -f -
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Delete pods and services with same names &quot;baz&quot; and &quot;foo&quot;
+        </p>
+        <p style="font-size: 16;">
+            kubectl delete pod,service baz foo
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Delete pods and services with label name=myLabel.
+        </p>
+        <p style="font-size: 16;">
+            kubectl delete pods,services -l name=myLabel
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Delete a pod with minimal delay
+        </p>
+        <p style="font-size: 16;">
+            kubectl delete pod foo --now
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Force delete a pod on a dead node
+        </p>
+        <p style="font-size: 16;">
+            kubectl delete pod foo --force
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Delete all pods
+        </p>
+        <p style="font-size: 16;">
+            kubectl delete pods --all
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --all=false:
+            </label>
+            <label style="font-size: 16;">
+                Delete all resources, including uninitialized ones, in the namespace of the specified resource types.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -A,
+            </label>
+            <label style="font-size: 16;">
+                --all-namespaces=false: If present, list the requested object(s) across all namespaces. Namespace in current context is ignored even if specified with --namespace.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cascade=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, cascade the deletion of the resources managed by this resource (e.g. Pods created by a ReplicationController).  Default true.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --dry-run=&#x27;none&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Must be &quot;none&quot;, &quot;server&quot;, or &quot;client&quot;. If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --field-selector=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Selector (field query) to filter on, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --filename=[]: containing the resource to delete.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --force=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, immediately remove resources from API and bypass graceful deletion. Note that immediate deletion of some resources may result in inconsistency or data loss and requires confirmation.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --grace-period=-1:
+            </label>
+            <label style="font-size: 16;">
+                Period of time in seconds given to the resource to terminate gracefully. Ignored if negative. Set to 1 for immediate shutdown. Can only be set to 0 when --force is true (force deletion).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --ignore-not-found=false:
+            </label>
+            <label style="font-size: 16;">
+                Treat &quot;resource not found&quot; as a successful delete. Defaults to &quot;true&quot; when --all is specified.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -k,
+            </label>
+            <label style="font-size: 16;">
+                --kustomize=&#x27;&#x27;: Process a kustomization directory. This flag can&#x27;t be used together with -f or -R.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --now=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, resources are signaled for immediate shutdown (same as --grace-period=1).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output mode. Use &quot;-o name&quot; for shorter output (resource/name).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --raw=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Raw URI to DELETE to the server.  Uses the transport specified by the kubeconfig file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -R,
+            </label>
+            <label style="font-size: 16;">
+                --recursive=false: Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --selector=&#x27;&#x27;: Selector (label query) to filter on, not including uninitialized ones.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --timeout=0s:
+            </label>
+            <label style="font-size: 16;">
+                The length of time to wait before giving up on a delete, zero means determine a timeout from the size of the object
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --wait=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, wait for resources to be gone before returning. This waits for finalizers.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl delete ([-f FILENAME] | [-k DIRECTORY] | TYPE [(NAME | -l label | --all)]) [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

@@ -1,0 +1,199 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Replace a resource by filename or stdin.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            JSON and YAML formats are accepted. If replacing an existing resource, the complete resource spec must be provided. This can be obtained by
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            $ kubectl get TYPE NAME -o yaml
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Replace a pod using the data in pod.json.
+        </p>
+        <p style="font-size: 16;">
+            kubectl replace -f ./pod.json
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Replace a pod based on the JSON passed into stdin.
+        </p>
+        <p style="font-size: 16;">
+            cat pod.json | kubectl replace -f -
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Update a single-container pod&#x27;s image version (tag) to v4
+        </p>
+        <p style="font-size: 16;">
+            kubectl get pod mypod -o yaml | sed &#x27;s/\(image: myimage\):.*$/\1:v4/&#x27; | kubectl replace -f -
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Force replace, delete and then re-create the resource
+        </p>
+        <p style="font-size: 16;">
+            kubectl replace --force -f ./pod.json
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-missing-template-keys=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cascade=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, cascade the deletion of the resources managed by this resource (e.g. Pods created by a ReplicationController).  Default true.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --dry-run=&#x27;none&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Must be &quot;none&quot;, &quot;server&quot;, or &quot;client&quot;. If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --filename=[]: to use to replace the resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --force=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, immediately remove resources from API and bypass graceful deletion. Note that immediate deletion of some resources may result in inconsistency or data loss and requires confirmation.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --grace-period=-1:
+            </label>
+            <label style="font-size: 16;">
+                Period of time in seconds given to the resource to terminate gracefully. Ignored if negative. Set to 1 for immediate shutdown. Can only be set to 0 when --force is true (force deletion).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -k,
+            </label>
+            <label style="font-size: 16;">
+                --kustomize=&#x27;&#x27;: Process a kustomization directory. This flag can&#x27;t be used together with -f or -R.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --raw=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Raw URI to PUT to the server.  Uses the transport specified by the kubeconfig file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -R,
+            </label>
+            <label style="font-size: 16;">
+                --recursive=false: Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --save-config=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, the configuration of current object will be saved in its annotation. Otherwise, the annotation will be unchanged. This flag is useful when you want to perform kubectl apply on this object in the future.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --template=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --timeout=0s:
+            </label>
+            <label style="font-size: 16;">
+                The length of time to wait before giving up on a delete, zero means determine a timeout from the size of the object
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --validate=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, use a schema to validate the input before sending it
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --wait=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, wait for resources to be gone before returning. This waits for finalizers.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl replace -f FILENAME [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

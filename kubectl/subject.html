@@ -1,0 +1,154 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Update User, Group or ServiceAccount in a RoleBinding/ClusterRoleBinding.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Update a ClusterRoleBinding for serviceaccount1
+        </p>
+        <p style="font-size: 16;">
+            kubectl set subject clusterrolebinding admin --serviceaccount=namespace:serviceaccount1
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Update a RoleBinding for user1, user2, and group1
+        </p>
+        <p style="font-size: 16;">
+            kubectl set subject rolebinding admin --user=user1 --user=user2 --group=group1
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Print the result (in yaml format) of updating rolebinding subjects from a local, without hitting the server
+        </p>
+        <p style="font-size: 16;">
+            kubectl create rolebinding admin --role=admin --user=admin -o yaml --dry-run=client | kubectl set subject --local -f - --user=foo -o yaml
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --all=false:
+            </label>
+            <label style="font-size: 16;">
+                Select all resources, including uninitialized ones, in the namespace of the specified resource types
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-missing-template-keys=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --dry-run=&#x27;none&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Must be &quot;none&quot;, &quot;server&quot;, or &quot;client&quot;. If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --filename=[]: Filename, directory, or URL to files the resource to update the subjects
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --group=[]:
+            </label>
+            <label style="font-size: 16;">
+                Groups to bind to the role
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -k,
+            </label>
+            <label style="font-size: 16;">
+                --kustomize=&#x27;&#x27;: Process the kustomization directory. This flag can&#x27;t be used together with -f or -R.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --local=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, set subject will NOT contact api-server but run locally.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -R,
+            </label>
+            <label style="font-size: 16;">
+                --recursive=false: Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --selector=&#x27;&#x27;: Selector (label query) to filter on, not including uninitialized ones, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. -l key1=value1,key2=value2)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --serviceaccount=[]:
+            </label>
+            <label style="font-size: 16;">
+                Service accounts to bind to the role
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --template=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl set subject (-f FILENAME | TYPE NAME) [--user=username] [--group=groupname] [--serviceaccount=namespace:serviceaccountname] [--dry-run=server|client|none] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

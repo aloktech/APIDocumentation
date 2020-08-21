@@ -1,0 +1,117 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Build or rebuild services.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Services are built once and then tagged as `project_service`,
+        </p>
+        <p style="font-size: 16;">
+            e.g. `composetest_db`. If you change a service&#x27;s `Dockerfile` or the
+        </p>
+        <p style="font-size: 16;">
+            contents of its build directory, you can run `docker-compose build` to rebuild it.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage: build [options] [--build-arg key=val...] [SERVICE...]
+        </label>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --build-arg
+            </label>
+            <label style="font-size: 16;">
+                key=val     Set build-time variables for services.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --compress
+            </label>
+            <label style="font-size: 16;">
+                             Compress the build context using gzip.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --force-rm
+            </label>
+            <label style="font-size: 16;">
+                             Always remove intermediate containers.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -m,
+            </label>
+            <label style="font-size: 16;">
+                --memory MEM        Set memory limit for the build container.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --no-cache
+            </label>
+            <label style="font-size: 16;">
+                             Do not use cache when building the image.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --no-rm
+            </label>
+            <label style="font-size: 16;">
+                                Do not remove intermediate containers after a successful build.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --parallel
+            </label>
+            <label style="font-size: 16;">
+                             Build images in parallel.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --progress
+            </label>
+            <label style="font-size: 16;">
+                string       Set type of progress output (auto, plain, tty).
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            EXPERIMENTAL flag for native builder.
+        </p>
+        <p style="font-size: 16;">
+            To enable, run with COMPOSE_DOCKER_CLI_BUILD=1)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --pull
+            </label>
+            <label style="font-size: 16;">
+                                 Always attempt to pull a newer version of the image.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -q,
+            </label>
+            <label style="font-size: 16;">
+                --quiet             Don&#x27;t print anything to STDOUT
+            </label>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,166 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Experimental: Wait for a specific condition on one or many resources.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            The command takes multiple resources and waits until the specified condition is seen in the Status field of every given resource.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Alternatively, the command can wait for the given set of resources to be deleted by providing the &quot;delete&quot; keyword as the value to the --for flag.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            A successful message will be printed to stdout indicating when the specified condition has been met. One can use -o option to change to output destination.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Wait for the pod &quot;busybox1&quot; to contain the status condition of type &quot;Ready&quot;.
+        </p>
+        <p style="font-size: 16;">
+            kubectl wait --for=condition=Ready pod/busybox1
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Wait for the pod &quot;busybox1&quot; to be deleted, with a timeout of 60s, after having issued the &quot;delete&quot; command.
+        </p>
+        <p style="font-size: 16;">
+            kubectl delete pod/busybox1
+        </p>
+        <p style="font-size: 16;">
+            kubectl wait --for=delete pod/busybox1 --timeout=60s
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --all=false:
+            </label>
+            <label style="font-size: 16;">
+                Select all resources in the namespace of the specified resource types
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -A,
+            </label>
+            <label style="font-size: 16;">
+                --all-namespaces=false: If present, list the requested object(s) across all namespaces. Namespace in current context is ignored even if specified with --namespace.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-missing-template-keys=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --field-selector=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Selector (field query) to filter on, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --filename=[]: identifying the resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --for=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                The condition to wait on: [delete|condition=condition-name].
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --local=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, annotation will NOT contact api-server but run locally.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -R,
+            </label>
+            <label style="font-size: 16;">
+                --recursive=true: Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --selector=&#x27;&#x27;: Selector (label query) to filter on, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. -l key1=value1,key2=value2)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --template=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --timeout=30s:
+            </label>
+            <label style="font-size: 16;">
+                The length of time to wait before giving up.  Zero means check once and don&#x27;t wait, negative means wait for a week.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl wait ([-f FILENAME] | resource.group/resource.name | resource.group [(-l label | --all)]) [--for=delete|--for condition=available] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

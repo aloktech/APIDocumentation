@@ -1,0 +1,179 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Modify kubeconfig files using subcommands like &quot;kubectl config set current-context my-context&quot;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            The loading order follows these rules:
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            1.  If the --kubeconfig flag is set, then only that file is loaded. The flag may only be set once and no merging takes place.
+        </p>
+        <p style="font-size: 16;">
+            2.  If $KUBECONFIG environment variable is set, then it is used as a list of paths (normal path delimiting rules for your system). These paths are merged. When a value is modified, it is modified in the file that defines the stanza. When a value is created, it is created in the first file that exists. If no files in the chain exist, then it creates the last file in the list.
+        </p>
+        <p style="font-size: 16;">
+            3.  Otherwise, ${HOME}/.kube/config is used and no merging takes place.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Available Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="current-context.html">
+                    current-context
+                </a>
+            </label>
+            <label>
+                Displays the current-context
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="delete-cluster.html">
+                    delete-cluster
+                </a>
+            </label>
+            <label>
+                Delete the specified cluster from the kubeconfig
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="delete-context.html">
+                    delete-context
+                </a>
+            </label>
+            <label>
+                Delete the specified context from the kubeconfig
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="get-clusters.html">
+                    get-clusters
+                </a>
+            </label>
+            <label>
+                Display clusters defined in the kubeconfig
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="get-contexts.html">
+                    get-contexts
+                </a>
+            </label>
+            <label>
+                Describe one or many contexts
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="rename-context.html">
+                    rename-context
+                </a>
+            </label>
+            <label>
+                Renames a context from the kubeconfig file.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="set.html">
+                    set
+                </a>
+            </label>
+            <label>
+                Sets an individual value in a kubeconfig file
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="set-cluster.html">
+                    set-cluster
+                </a>
+            </label>
+            <label>
+                Sets a cluster entry in kubeconfig
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="set-context.html">
+                    set-context
+                </a>
+            </label>
+            <label>
+                Sets a context entry in kubeconfig
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="set-credentials.html">
+                    set-credentials
+                </a>
+            </label>
+            <label>
+                Sets a user entry in kubeconfig
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="unset.html">
+                    unset
+                </a>
+            </label>
+            <label>
+                Unsets an individual value in a kubeconfig file
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="use-context.html">
+                    use-context
+                </a>
+            </label>
+            <label>
+                Sets the current-context in a kubeconfig file
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="view.html">
+                    view
+                </a>
+            </label>
+            <label>
+                Display merged kubeconfig settings or a specified kubeconfig file
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl config SUBCOMMAND [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl &lt;command&gt; --help&quot; for more information about a given command.
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

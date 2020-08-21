@@ -1,0 +1,391 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xbatch
+            </label>
+            <label style="font-size: 16;">
+                          disable background compilation
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xbootclasspath/a:&lt;directories
+            </label>
+            <label style="font-size: 16;">
+                and zip/jar files separated by :&gt;
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            append to end of bootstrap class path
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xcheck:jni
+            </label>
+            <label style="font-size: 16;">
+                      perform additional checks for JNI functions
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xcomp
+            </label>
+            <label style="font-size: 16;">
+                           forces compilation of methods on first invocation
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xdebug
+            </label>
+            <label style="font-size: 16;">
+                          does nothing. Provided for backward compatibility.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xdiag
+            </label>
+            <label style="font-size: 16;">
+                           show additional diagnostic messages
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xfuture
+            </label>
+            <label style="font-size: 16;">
+                         enable strictest checks, anticipating future default.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            This option is deprecated and may be removed in a
+        </p>
+        <p style="font-size: 16;">
+            future release.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xint
+            </label>
+            <label style="font-size: 16;">
+                            interpreted mode execution only
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xinternalversion
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            displays more detailed JVM version information than the
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -version
+            </label>
+            <label style="font-size: 16;">
+                option
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xlog:&lt;opts&gt;
+            </label>
+            <label style="font-size: 16;">
+                     Configure or enable logging with the Java Virtual
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            Machine (JVM) unified logging framework. Use -Xlog:help
+        </p>
+        <p style="font-size: 16;">
+            for details.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xloggc:&lt;file&gt;
+            </label>
+            <label style="font-size: 16;">
+                   log GC status to a file with time stamps.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            This option is deprecated and may be removed in a
+        </p>
+        <p style="font-size: 16;">
+            future release. It is replaced by -Xlog:gc:&lt;file&gt;.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xmixed
+            </label>
+            <label style="font-size: 16;">
+                          mixed mode execution (default)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xmn&lt;size&gt;
+            </label>
+            <label style="font-size: 16;">
+                       sets the initial and maximum size (in bytes) of the heap
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            for the young generation (nursery)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xms&lt;size&gt;
+            </label>
+            <label style="font-size: 16;">
+                       set initial Java heap size
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xmx&lt;size&gt;
+            </label>
+            <label style="font-size: 16;">
+                       set maximum Java heap size
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xnoclassgc
+            </label>
+            <label style="font-size: 16;">
+                      disable class garbage collection
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xrs
+            </label>
+            <label style="font-size: 16;">
+                             reduce use of OS signals by Java/VM (see documentation)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xshare:auto
+            </label>
+            <label style="font-size: 16;">
+                     use shared class data if possible (default)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xshare:off
+            </label>
+            <label style="font-size: 16;">
+                      do not attempt to use shared class data
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xshare:on
+            </label>
+            <label style="font-size: 16;">
+                       require using shared class data, otherwise fail.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            This is a testing option and may lead to intermittent
+        </p>
+        <p style="font-size: 16;">
+            failures. It should not be used in production environments.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -XshowSettings
+            </label>
+            <label style="font-size: 16;">
+                   show all settings and continue
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -XshowSettings:all
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            show all settings and continue
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -XshowSettings:locale
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            show all locale related settings and continue
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -XshowSettings:properties
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            show all property settings and continue
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -XshowSettings:vm
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            show all vm related settings and continue
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -XshowSettings:system
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (Linux Only) show host system or container
+        </p>
+        <p style="font-size: 16;">
+            configuration and continue
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xss&lt;size&gt;
+            </label>
+            <label style="font-size: 16;">
+                       set java thread stack size
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -Xverify
+            </label>
+            <label style="font-size: 16;">
+                         sets the mode of the bytecode verifier
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            Note that option -Xverify:none is deprecated and
+        </p>
+        <p style="font-size: 16;">
+            may be removed in a future release.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --add-reads
+            </label>
+            <label style="font-size: 16;">
+                &lt;module&gt;=&lt;target-module&gt;(,&lt;target-module&gt;)*
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            updates &lt;module&gt; to read &lt;target-module&gt;, regardless
+        </p>
+        <p style="font-size: 16;">
+            of module declaration.
+        </p>
+        <p style="font-size: 16;">
+            &lt;target-module&gt; can be ALL-UNNAMED to read all unnamed
+        </p>
+        <p style="font-size: 16;">
+            modules.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --add-exports
+            </label>
+            <label style="font-size: 16;">
+                &lt;module&gt;/&lt;package&gt;=&lt;target-module&gt;(,&lt;target-module&gt;)*
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            updates &lt;module&gt; to export &lt;package&gt; to &lt;target-module&gt;,
+        </p>
+        <p style="font-size: 16;">
+            regardless of module declaration.
+        </p>
+        <p style="font-size: 16;">
+            &lt;target-module&gt; can be ALL-UNNAMED to export to all
+        </p>
+        <p style="font-size: 16;">
+            unnamed modules.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --add-opens
+            </label>
+            <label style="font-size: 16;">
+                &lt;module&gt;/&lt;package&gt;=&lt;target-module&gt;(,&lt;target-module&gt;)*
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            updates &lt;module&gt; to open &lt;package&gt; to
+        </p>
+        <p style="font-size: 16;">
+            &lt;target-module&gt;, regardless of module declaration.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --illegal-access=&lt;value&gt;
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            permit or deny access to members of types in named modules
+        </p>
+        <p style="font-size: 16;">
+            by code in unnamed modules.
+        </p>
+        <p style="font-size: 16;">
+            &lt;value&gt; is one of &quot;deny&quot;, &quot;permit&quot;, &quot;warn&quot;, or &quot;debug&quot;
+        </p>
+        <p style="font-size: 16;">
+            This option will be removed in a future release.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --limit-modules
+            </label>
+            <label style="font-size: 16;">
+                &lt;module name&gt;[,&lt;module name&gt;...]
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            limit the universe of observable modules
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --patch-module
+            </label>
+            <label style="font-size: 16;">
+                &lt;module&gt;=&lt;file&gt;(:&lt;file&gt;)*
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            override or augment a module with classes and resources
+        </p>
+        <p style="font-size: 16;">
+            in JAR files or directories.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --source
+            </label>
+            <label style="font-size: 16;">
+                &lt;version&gt;
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            set the version of the source in source-file mode.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            These extra options are subject to change without notice.
+        </p>
+    </body>
+</html>

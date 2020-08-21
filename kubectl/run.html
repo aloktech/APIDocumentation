@@ -1,0 +1,384 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Create and run a particular image in a pod.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Start a nginx pod.
+        </p>
+        <p style="font-size: 16;">
+            kubectl run nginx --image=nginx
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Start a hazelcast pod and let the container expose port 5701.
+        </p>
+        <p style="font-size: 16;">
+            kubectl run hazelcast --image=hazelcast/hazelcast --port=5701
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Start a hazelcast pod and set environment variables &quot;DNS_DOMAIN=cluster&quot; and &quot;POD_NAMESPACE=default&quot; in the container.
+        </p>
+        <p style="font-size: 16;">
+            kubectl run hazelcast --image=hazelcast/hazelcast --env=&quot;DNS_DOMAIN=cluster&quot; --env=&quot;POD_NAMESPACE=default&quot;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Start a hazelcast pod and set labels &quot;app=hazelcast&quot; and &quot;env=prod&quot; in the container.
+        </p>
+        <p style="font-size: 16;">
+            kubectl run hazelcast --image=hazelcast/hazelcast --labels=&quot;app=hazelcast,env=prod&quot;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Dry run. Print the corresponding API objects without creating them.
+        </p>
+        <p style="font-size: 16;">
+            kubectl run nginx --image=nginx --dry-run=client
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Start a nginx pod, but overload the spec with a partial set of values parsed from JSON.
+        </p>
+        <p style="font-size: 16;">
+            kubectl run nginx --image=nginx --overrides=&#x27;{ &quot;apiVersion&quot;: &quot;v1&quot;, &quot;spec&quot;: { ... } }&#x27;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Start a busybox pod and keep it in the foreground, don&#x27;t restart it if it exits.
+        </p>
+        <p style="font-size: 16;">
+            kubectl run -i -t busybox --image=busybox --restart=Never
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Start the nginx pod using the default command, but use custom arguments (arg1 .. argN) for that command.
+        </p>
+        <p style="font-size: 16;">
+            kubectl run nginx --image=nginx -- &lt;arg1&gt; &lt;arg2&gt; ... &lt;argN&gt;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Start the nginx pod using a different command and custom arguments.
+        </p>
+        <p style="font-size: 16;">
+            kubectl run nginx --image=nginx --command -- &lt;cmd&gt; &lt;arg1&gt; ... &lt;argN&gt;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-missing-template-keys=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --attach=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, wait for the Pod to start running, and then attach to the Pod as if &#x27;kubectl attach ...&#x27; were called.  Default false, unless &#x27;-i/--stdin&#x27; is set, in which case the default is true. With &#x27;--restart=Never&#x27; the exit code of the container process is returned.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cascade=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, cascade the deletion of the resources managed by this resource (e.g. Pods created by a ReplicationController).  Default true.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --command=false:
+            </label>
+            <label style="font-size: 16;">
+                If true and extra arguments are present, use them as the &#x27;command&#x27; field in the container, rather than the &#x27;args&#x27; field which is the default.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --dry-run=&#x27;none&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Must be &quot;none&quot;, &quot;server&quot;, or &quot;client&quot;. If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --env=[]:
+            </label>
+            <label style="font-size: 16;">
+                Environment variables to set in the container.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --expose=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, service is created for the container(s) which are run
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --filename=[]: to use to replace the resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --force=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, immediately remove resources from API and bypass graceful deletion. Note that immediate deletion of some resources may result in inconsistency or data loss and requires confirmation.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --grace-period=-1:
+            </label>
+            <label style="font-size: 16;">
+                Period of time in seconds given to the resource to terminate gracefully. Ignored if negative. Set to 1 for immediate shutdown. Can only be set to 0 when --force is true (force deletion).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --hostport=-1:
+            </label>
+            <label style="font-size: 16;">
+                The host port mapping for the container port. To demonstrate a single-machine container.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --image=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                The image for the container to run.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --image-pull-policy=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                The image pull policy for the container. If left empty, this value will not be specified by the client and defaulted by the server
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -k,
+            </label>
+            <label style="font-size: 16;">
+                --kustomize=&#x27;&#x27;: Process a kustomization directory. This flag can&#x27;t be used together with -f or -R.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --labels=&#x27;&#x27;: Comma separated labels to apply to the pod(s). Will override previous values.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --leave-stdin-open=false:
+            </label>
+            <label style="font-size: 16;">
+                If the pod is started in interactive mode or with stdin, leave stdin open after the first attach completes. By default, stdin will be closed after the first attach completes.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --limits=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                The resource requirement limits for this container.  For example, &#x27;cpu=200m,memory=512Mi&#x27;.  Note that server side components may assign limits depending on the server configuration, such as limit ranges.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --overrides=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                An inline JSON override for the generated object. If this is non-empty, it is used to override the generated object. Requires that the object supply a valid apiVersion field.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --pod-running-timeout=1m0s:
+            </label>
+            <label style="font-size: 16;">
+                The length of time (like 5s, 2m, or 3h, higher than zero) to wait until at least one pod is running
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --port=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                The port that this container exposes.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --quiet=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, suppress prompt messages.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --record=false:
+            </label>
+            <label style="font-size: 16;">
+                Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -R,
+            </label>
+            <label style="font-size: 16;">
+                --recursive=false: Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --requests=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                The resource requirement requests for this container.  For example, &#x27;cpu=100m,memory=256Mi&#x27;.  Note that server side components may assign requests depending on the server configuration, such as limit ranges.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --restart=&#x27;Always&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                The restart policy for this Pod.  Legal values [Always, OnFailure, Never].  If set to &#x27;Always&#x27; a deployment is created, if set to &#x27;OnFailure&#x27; a job is created, if set to &#x27;Never&#x27;, a regular pod is created. For the latter two --replicas must be 1.  Default &#x27;Always&#x27;, for CronJobs `Never`.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --rm=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, delete resources created in this command for attached containers.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --save-config=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, the configuration of current object will be saved in its annotation. Otherwise, the annotation will be unchanged. This flag is useful when you want to perform kubectl apply on this object in the future.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --serviceaccount=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Service account to set in the pod spec.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -i,
+            </label>
+            <label style="font-size: 16;">
+                --stdin=false: Keep stdin open on the container(s) in the pod, even if nothing is attached.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --template=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --timeout=0s:
+            </label>
+            <label style="font-size: 16;">
+                The length of time to wait before giving up on a delete, zero means determine a timeout from the size of the object
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -t,
+            </label>
+            <label style="font-size: 16;">
+                --tty=false: Allocated a TTY for each container in the pod.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --wait=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, wait for resources to be gone before returning. This waits for finalizers.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl run NAME --image=image [--env=&quot;key=value&quot;] [--port=port] [--dry-run=server|client] [--overrides=inline-json] [--command] -- [COMMAND] [args...] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

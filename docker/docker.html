@@ -1,0 +1,712 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:	docker [OPTIONS] COMMAND
+        </label>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            A self-sufficient runtime for containers
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --config
+            </label>
+            <label style="font-size: 16;">
+                string      Location of client config files (default
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            &quot;/home/p/.docker&quot;)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -c,
+            </label>
+            <label style="font-size: 16;">
+                --context string     Name of the context to use to connect to the
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            daemon (overrides DOCKER_HOST env var and
+        </p>
+        <p style="font-size: 16;">
+            default context set with &quot;docker context use&quot;)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -D,
+            </label>
+            <label style="font-size: 16;">
+                --debug              Enable debug mode
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -H,
+            </label>
+            <label style="font-size: 16;">
+                --host list          Daemon socket(s) to connect to
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --log-level string   Set the logging level
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (&quot;debug&quot;|&quot;info&quot;|&quot;warn&quot;|&quot;error&quot;|&quot;fatal&quot;)
+        </p>
+        <p style="font-size: 16;">
+            (default &quot;info&quot;)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --tls
+            </label>
+            <label style="font-size: 16;">
+                               Use TLS; implied by --tlsverify
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --tlscacert
+            </label>
+            <label style="font-size: 16;">
+                string   Trust certs signed only by this CA (default
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            &quot;/home/p/.docker/ca.pem&quot;)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --tlscert
+            </label>
+            <label style="font-size: 16;">
+                string     Path to TLS certificate file (default
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            &quot;/home/p/.docker/cert.pem&quot;)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --tlskey
+            </label>
+            <label style="font-size: 16;">
+                string      Path to TLS key file (default
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            &quot;/home/p/.docker/key.pem&quot;)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --tlsverify
+            </label>
+            <label style="font-size: 16;">
+                         Use TLS and verify the remote
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -v,
+            </label>
+            <label style="font-size: 16;">
+                --version            Print version information and quit
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Management Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="builder.html">
+                    builder
+                </a>
+            </label>
+            <label>
+                Manage builds
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="config.html">
+                    config
+                </a>
+            </label>
+            <label>
+                Manage Docker configs
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="container.html">
+                    container
+                </a>
+            </label>
+            <label>
+                Manage containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="context.html">
+                    context
+                </a>
+            </label>
+            <label>
+                Manage contexts
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="engine.html">
+                    engine
+                </a>
+            </label>
+            <label>
+                Manage the docker engine
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="image.html">
+                    image
+                </a>
+            </label>
+            <label>
+                Manage images
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="network.html">
+                    network
+                </a>
+            </label>
+            <label>
+                Manage networks
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="node.html">
+                    node
+                </a>
+            </label>
+            <label>
+                Manage Swarm nodes
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="plugin.html">
+                    plugin
+                </a>
+            </label>
+            <label>
+                Manage plugins
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="secret.html">
+                    secret
+                </a>
+            </label>
+            <label>
+                Manage Docker secrets
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="service.html">
+                    service
+                </a>
+            </label>
+            <label>
+                Manage services
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="stack.html">
+                    stack
+                </a>
+            </label>
+            <label>
+                Manage Docker stacks
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="swarm.html">
+                    swarm
+                </a>
+            </label>
+            <label>
+                Manage Swarm
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="system.html">
+                    system
+                </a>
+            </label>
+            <label>
+                Manage Docker
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="trust.html">
+                    trust
+                </a>
+            </label>
+            <label>
+                Manage trust on Docker images
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="volume.html">
+                    volume
+                </a>
+            </label>
+            <label>
+                Manage volumes
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="attach.html">
+                    attach
+                </a>
+            </label>
+            <label>
+                Attach local standard input, output, and error streams to a running container
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="build.html">
+                    build
+                </a>
+            </label>
+            <label>
+                Build an image from a Dockerfile
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="commit.html">
+                    commit
+                </a>
+            </label>
+            <label>
+                Create a new image from a container&#x27;s changes
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="cp.html">
+                    cp
+                </a>
+            </label>
+            <label>
+                Copy files/folders between a container and the local filesystem
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="create.html">
+                    create
+                </a>
+            </label>
+            <label>
+                Create a new container
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="diff.html">
+                    diff
+                </a>
+            </label>
+            <label>
+                Inspect changes to files or directories on a container&#x27;s filesystem
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="events.html">
+                    events
+                </a>
+            </label>
+            <label>
+                Get real time events from the server
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="exec.html">
+                    exec
+                </a>
+            </label>
+            <label>
+                Run a command in a running container
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="export.html">
+                    export
+                </a>
+            </label>
+            <label>
+                Export a container&#x27;s filesystem as a tar archive
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="history.html">
+                    history
+                </a>
+            </label>
+            <label>
+                Show the history of an image
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="images.html">
+                    images
+                </a>
+            </label>
+            <label>
+                List images
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="import.html">
+                    import
+                </a>
+            </label>
+            <label>
+                Import the contents from a tarball to create a filesystem image
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="info.html">
+                    info
+                </a>
+            </label>
+            <label>
+                Display system-wide information
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="inspect.html">
+                    inspect
+                </a>
+            </label>
+            <label>
+                Return low-level information on Docker objects
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="kill.html">
+                    kill
+                </a>
+            </label>
+            <label>
+                Kill one or more running containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="load.html">
+                    load
+                </a>
+            </label>
+            <label>
+                Load an image from a tar archive or STDIN
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="login.html">
+                    login
+                </a>
+            </label>
+            <label>
+                Log in to a Docker registry
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="logout.html">
+                    logout
+                </a>
+            </label>
+            <label>
+                Log out from a Docker registry
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="logs.html">
+                    logs
+                </a>
+            </label>
+            <label>
+                Fetch the logs of a container
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="pause.html">
+                    pause
+                </a>
+            </label>
+            <label>
+                Pause all processes within one or more containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="port.html">
+                    port
+                </a>
+            </label>
+            <label>
+                List port mappings or a specific mapping for the container
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="ps.html">
+                    ps
+                </a>
+            </label>
+            <label>
+                List containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="pull.html">
+                    pull
+                </a>
+            </label>
+            <label>
+                Pull an image or a repository from a registry
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="push.html">
+                    push
+                </a>
+            </label>
+            <label>
+                Push an image or a repository to a registry
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="rename.html">
+                    rename
+                </a>
+            </label>
+            <label>
+                Rename a container
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="restart.html">
+                    restart
+                </a>
+            </label>
+            <label>
+                Restart one or more containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="rm.html">
+                    rm
+                </a>
+            </label>
+            <label>
+                Remove one or more containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="rmi.html">
+                    rmi
+                </a>
+            </label>
+            <label>
+                Remove one or more images
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="run.html">
+                    run
+                </a>
+            </label>
+            <label>
+                Run a command in a new container
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="save.html">
+                    save
+                </a>
+            </label>
+            <label>
+                Save one or more images to a tar archive (streamed to STDOUT by default)
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="search.html">
+                    search
+                </a>
+            </label>
+            <label>
+                Search the Docker Hub for images
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="start.html">
+                    start
+                </a>
+            </label>
+            <label>
+                Start one or more stopped containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="stats.html">
+                    stats
+                </a>
+            </label>
+            <label>
+                Display a live stream of container(s) resource usage statistics
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="stop.html">
+                    stop
+                </a>
+            </label>
+            <label>
+                Stop one or more running containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="tag.html">
+                    tag
+                </a>
+            </label>
+            <label>
+                Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="top.html">
+                    top
+                </a>
+            </label>
+            <label>
+                Display the running processes of a container
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="unpause.html">
+                    unpause
+                </a>
+            </label>
+            <label>
+                Unpause all processes within one or more containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="update.html">
+                    update
+                </a>
+            </label>
+            <label>
+                Update configuration of one or more containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="version.html">
+                    version
+                </a>
+            </label>
+            <label>
+                Show the Docker version information
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="wait.html">
+                    wait
+                </a>
+            </label>
+            <label>
+                Block until one or more containers stop, then print their exit codes
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Run &#x27;docker COMMAND --help&#x27; for more information on a command.
+        </p>
+    </body>
+</html>

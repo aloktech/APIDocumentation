@@ -1,0 +1,344 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Starts a local single-node OpenShift cluster.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            All flags of this command can also be configured by setting corresponding environment variables or persistent configuration options.
+        </p>
+        <p style="font-size: 16;">
+            For the former prefix the flag with MINISHIFT_, uppercase characters and replace &#x27;-&#x27; with &#x27;_&#x27;, for example MINISHIFT_VM_DRIVER.
+        </p>
+        <p style="font-size: 16;">
+            For the latter see &#x27;minishift config -h&#x27;.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            minishift start [flags]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Flags:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -a,
+            </label>
+            <label style="font-size: 16;">
+                --addon-env stringSlice            Specify key-value pairs to be added to the add-on interpolation context.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cpus
+            </label>
+            <label style="font-size: 16;">
+                int                         Number of CPU cores to allocate to the Minishift VM. (default 2)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --disk-size
+            </label>
+            <label style="font-size: 16;">
+                string                 Disk size to allocate to the Minishift VM. Use the format &lt;size&gt;&lt;unit&gt;, where unit = MB or GB. (default &quot;20GB&quot;)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --docker-env
+            </label>
+            <label style="font-size: 16;">
+                stringSlice           Environment variables to pass to the Docker daemon. Use the format &lt;key&gt;=&lt;value&gt;.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --docker-opt
+            </label>
+            <label style="font-size: 16;">
+                stringSlice           Specify arbitrary flags to pass to the Docker daemon in the form &lt;flag&gt;=&lt;value&gt;.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -h,
+            </label>
+            <label style="font-size: 16;">
+                --help                             help for start
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --host-only-cidr
+            </label>
+            <label style="font-size: 16;">
+                string            The CIDR to be used for the minishift VM. (Only supported with VirtualBox driver.) (default &quot;192.168.99.1/24&quot;)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --http-proxy
+            </label>
+            <label style="font-size: 16;">
+                string                HTTP proxy in the format http://&lt;username&gt;:&lt;password&gt;@&lt;proxy_host&gt;:&lt;proxy_port&gt;. Overrides potential HTTP_PROXY setting in the environment.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --https-proxy
+            </label>
+            <label style="font-size: 16;">
+                string               HTTPS proxy in the format https://&lt;username&gt;:&lt;password&gt;@&lt;proxy_host&gt;:&lt;proxy_port&gt;. Overrides potential HTTPS_PROXY setting in the environment.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --insecure-registry
+            </label>
+            <label style="font-size: 16;">
+                stringSlice    Non-secure Docker registries to pass to the Docker daemon. (default )
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --iso-url
+            </label>
+            <label style="font-size: 16;">
+                string                   Location of the minishift ISO. Can be a URL, file URI or one of the following short names: [centos]. (default &quot;centos&quot;)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --memory
+            </label>
+            <label style="font-size: 16;">
+                string                    Amount of RAM to allocate to the Minishift VM. Use the format &lt;size&gt;&lt;unit&gt;, where unit = MB or GB. (default &quot;4GB&quot;)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --network-nameserver
+            </label>
+            <label style="font-size: 16;">
+                stringSlice   Specify nameserver to use for the instance.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --no-proxy
+            </label>
+            <label style="font-size: 16;">
+                string                  List of hosts or subnets for which no proxy should be used.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --openshift-version
+            </label>
+            <label style="font-size: 16;">
+                string         The OpenShift version to run, eg. latest or v3.11.0 (default &quot;v3.11.0&quot;)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --password
+            </label>
+            <label style="font-size: 16;">
+                string                  Password for the virtual machine registration.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --public-hostname
+            </label>
+            <label style="font-size: 16;">
+                string           Public hostname of the OpenShift cluster.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --registry-mirror
+            </label>
+            <label style="font-size: 16;">
+                stringSlice      Registry mirrors to pass to the Docker daemon.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --remote-ipaddress
+            </label>
+            <label style="font-size: 16;">
+                string          IP address of the remote machine to provision OpenShift on
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --remote-ssh-key
+            </label>
+            <label style="font-size: 16;">
+                string            SSH private key location on the host to connect remote machine
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --remote-ssh-user
+            </label>
+            <label style="font-size: 16;">
+                string           The username of the remote machine to provision OpenShift on
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --routing-suffix
+            </label>
+            <label style="font-size: 16;">
+                string            Default suffix for the server routes.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --server-loglevel
+            </label>
+            <label style="font-size: 16;">
+                int              Log level for the OpenShift server.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --skip-registration
+            </label>
+            <label style="font-size: 16;">
+                               Skip the virtual machine registration.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --skip-registry-check
+            </label>
+            <label style="font-size: 16;">
+                             Skip the Docker daemon registry check.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --skip-startup-checks
+            </label>
+            <label style="font-size: 16;">
+                             Skip the startup checks.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --timezone
+            </label>
+            <label style="font-size: 16;">
+                string                  TimeZone for Minishift VM (default &quot;UTC&quot;)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --username
+            </label>
+            <label style="font-size: 16;">
+                string                  Username for the virtual machine registration.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --vm-driver
+            </label>
+            <label style="font-size: 16;">
+                string                 The driver to use for the Minishift VM. Possible values: [virtualbox kvm generic] (default &quot;kvm&quot;)
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Global Flags:
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --alsologtostderr
+            </label>
+            <label style="font-size: 16;">
+                                 log to standard error as well as files
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --log_backtrace_at
+            </label>
+            <label style="font-size: 16;">
+                traceLocation   when logging hits line file:N, emit a stack trace (default :0)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --log_dir
+            </label>
+            <label style="font-size: 16;">
+                string                   If non-empty, write log files in this directory (default &quot;&quot;)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --logtostderr
+            </label>
+            <label style="font-size: 16;">
+                                     log to standard error instead of files
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --profile
+            </label>
+            <label style="font-size: 16;">
+                string                   Profile name (default &quot;minishift&quot;)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --show-libmachine-logs
+            </label>
+            <label style="font-size: 16;">
+                            Show logs from libmachine.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --stderrthreshold
+            </label>
+            <label style="font-size: 16;">
+                severity         logs at or above this threshold go to stderr (default 2)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -v,
+            </label>
+            <label style="font-size: 16;">
+                --v Level                          log level for V logs. Level varies from 1 to 5 (default 1).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --vmodule
+            </label>
+            <label style="font-size: 16;">
+                moduleSpec               comma-separated list of pattern=N settings for file-filtered logging
+            </label>
+        </div>
+    </body>
+</html>

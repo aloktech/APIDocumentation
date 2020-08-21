@@ -1,0 +1,516 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Create, delete, describe, or change a topic.
+        </p>
+        <p style="font-size: 16;">
+            Option                                   Description
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                ------
+            </label>
+            <label style="font-size: 16;">
+                                                  -----------
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --alter
+            </label>
+            <label style="font-size: 16;">
+                                                 Alter the number of partitions,
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            replica assignment, and/or
+        </p>
+        <p style="font-size: 16;">
+            configuration for the topic.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --at-min-isr-partitions
+            </label>
+            <label style="font-size: 16;">
+                                 if set when describing topics, only
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            show partitions whose isr count is
+        </p>
+        <p style="font-size: 16;">
+            equal to the configured minimum. Not
+        </p>
+        <p style="font-size: 16;">
+            supported with the --zookeeper
+        </p>
+        <p style="font-size: 16;">
+            option.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --bootstrap-server
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: server to    REQUIRED: The Kafka server to connect
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            connect to&gt;                              to. In case of providing this, a
+        </p>
+        <p style="font-size: 16;">
+            direct Zookeeper connection won&#x27;t be
+        </p>
+        <p style="font-size: 16;">
+            required.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --command-config
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: command        Property file containing configs to be
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            config property file&gt;                    passed to Admin Client. This is used
+        </p>
+        <p style="font-size: 16;">
+            only with --bootstrap-server option
+        </p>
+        <p style="font-size: 16;">
+            for describing and altering broker
+        </p>
+        <p style="font-size: 16;">
+            configs.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --config
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: name=value&gt;            A topic configuration override for the
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            topic being created or altered.The
+        </p>
+        <p style="font-size: 16;">
+            following is a list of valid
+        </p>
+        <p style="font-size: 16;">
+            configurations:
+        </p>
+        <p style="font-size: 16;">
+            cleanup.policy
+        </p>
+        <p style="font-size: 16;">
+            compression.type
+        </p>
+        <p style="font-size: 16;">
+            delete.retention.ms
+        </p>
+        <p style="font-size: 16;">
+            file.delete.delay.ms
+        </p>
+        <p style="font-size: 16;">
+            flush.messages
+        </p>
+        <p style="font-size: 16;">
+            flush.ms
+        </p>
+        <p style="font-size: 16;">
+            follower.replication.throttled.
+        </p>
+        <p style="font-size: 16;">
+            replicas
+        </p>
+        <p style="font-size: 16;">
+            index.interval.bytes
+        </p>
+        <p style="font-size: 16;">
+            leader.replication.throttled.replicas
+        </p>
+        <p style="font-size: 16;">
+            max.compaction.lag.ms
+        </p>
+        <p style="font-size: 16;">
+            max.message.bytes
+        </p>
+        <p style="font-size: 16;">
+            message.downconversion.enable
+        </p>
+        <p style="font-size: 16;">
+            message.format.version
+        </p>
+        <p style="font-size: 16;">
+            message.timestamp.difference.max.ms
+        </p>
+        <p style="font-size: 16;">
+            message.timestamp.type
+        </p>
+        <p style="font-size: 16;">
+            min.cleanable.dirty.ratio
+        </p>
+        <p style="font-size: 16;">
+            min.compaction.lag.ms
+        </p>
+        <p style="font-size: 16;">
+            min.insync.replicas
+        </p>
+        <p style="font-size: 16;">
+            preallocate
+        </p>
+        <p style="font-size: 16;">
+            retention.bytes
+        </p>
+        <p style="font-size: 16;">
+            retention.ms
+        </p>
+        <p style="font-size: 16;">
+            segment.bytes
+        </p>
+        <p style="font-size: 16;">
+            segment.index.bytes
+        </p>
+        <p style="font-size: 16;">
+            segment.jitter.ms
+        </p>
+        <p style="font-size: 16;">
+            segment.ms
+        </p>
+        <p style="font-size: 16;">
+            unclean.leader.election.enable
+        </p>
+        <p style="font-size: 16;">
+            See the Kafka documentation for full
+        </p>
+        <p style="font-size: 16;">
+            details on the topic configs.It is
+        </p>
+        <p style="font-size: 16;">
+            supported only in combination with --
+        </p>
+        <p style="font-size: 16;">
+            create if --bootstrap-server option
+        </p>
+        <p style="font-size: 16;">
+            is used.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --create
+            </label>
+            <label style="font-size: 16;">
+                                                Create a new topic.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --delete
+            </label>
+            <label style="font-size: 16;">
+                                                Delete a topic
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --delete-config
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: name&gt;           A topic configuration override to be
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            removed for an existing topic (see
+        </p>
+        <p style="font-size: 16;">
+            the list of configurations under the
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --config
+            </label>
+            <label style="font-size: 16;">
+                option). Not supported with
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            the --bootstrap-server option.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --describe
+            </label>
+            <label style="font-size: 16;">
+                                              List details for the given topics.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --disable-rack-aware
+            </label>
+            <label style="font-size: 16;">
+                                    Disable rack aware replica assignment
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --exclude-internal
+            </label>
+            <label style="font-size: 16;">
+                                      exclude internal topics when running
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            list or describe command. The
+        </p>
+        <p style="font-size: 16;">
+            internal topics will be listed by
+        </p>
+        <p style="font-size: 16;">
+            default
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --force
+            </label>
+            <label style="font-size: 16;">
+                                                 Suppress console prompts
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --help
+            </label>
+            <label style="font-size: 16;">
+                                                  Print usage information.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --if-exists
+            </label>
+            <label style="font-size: 16;">
+                                             if set when altering or deleting or
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            describing topics, the action will
+        </p>
+        <p style="font-size: 16;">
+            only execute if the topic exists.
+        </p>
+        <p style="font-size: 16;">
+            Not supported with the --bootstrap-
+        </p>
+        <p style="font-size: 16;">
+            server option.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --if-not-exists
+            </label>
+            <label style="font-size: 16;">
+                                         if set when creating topics, the
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            action will only execute if the
+        </p>
+        <p style="font-size: 16;">
+            topic does not already exist. Not
+        </p>
+        <p style="font-size: 16;">
+            supported with the --bootstrap-
+        </p>
+        <p style="font-size: 16;">
+            server option.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --list
+            </label>
+            <label style="font-size: 16;">
+                                                  List all available topics.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --partitions
+            </label>
+            <label style="font-size: 16;">
+                &lt;Integer: # of partitions&gt;  The number of partitions for the topic
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            being created or altered (WARNING:
+        </p>
+        <p style="font-size: 16;">
+            If partitions are increased for a
+        </p>
+        <p style="font-size: 16;">
+            topic that has a key, the partition
+        </p>
+        <p style="font-size: 16;">
+            logic or ordering of the messages
+        </p>
+        <p style="font-size: 16;">
+            will be affected). If not supplied
+        </p>
+        <p style="font-size: 16;">
+            for create, defaults to the cluster
+        </p>
+        <p style="font-size: 16;">
+            default.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --replica-assignment
+            </label>
+            <label style="font-size: 16;">
+                &lt;String:            A list of manual partition-to-broker
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            broker_id_for_part1_replica1 :           assignments for the topic being
+        </p>
+        <p style="font-size: 16;">
+            broker_id_for_part1_replica2 ,           created or altered.
+        </p>
+        <p style="font-size: 16;">
+            broker_id_for_part2_replica1 :
+        </p>
+        <p style="font-size: 16;">
+            broker_id_for_part2_replica2 , ...&gt;
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --replication-factor
+            </label>
+            <label style="font-size: 16;">
+                &lt;Integer:           The replication factor for each
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            replication factor&gt;                      partition in the topic being
+        </p>
+        <p style="font-size: 16;">
+            created. If not supplied, defaults
+        </p>
+        <p style="font-size: 16;">
+            to the cluster default.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --topic
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: topic&gt;                  The topic to create, alter, describe
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            or delete. It also accepts a regular
+        </p>
+        <p style="font-size: 16;">
+            expression, except for --create
+        </p>
+        <p style="font-size: 16;">
+            option. Put topic name in double
+        </p>
+        <p style="font-size: 16;">
+            quotes and use the &#x27;\&#x27; prefix to
+        </p>
+        <p style="font-size: 16;">
+            escape regular expression symbols; e.
+        </p>
+        <p style="font-size: 16;">
+            g. &quot;test\.topic&quot;.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --topics-with-overrides
+            </label>
+            <label style="font-size: 16;">
+                                 if set when describing topics, only
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            show topics that have overridden
+        </p>
+        <p style="font-size: 16;">
+            configs
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --unavailable-partitions
+            </label>
+            <label style="font-size: 16;">
+                                if set when describing topics, only
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            show partitions whose leader is not
+        </p>
+        <p style="font-size: 16;">
+            available
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --under-min-isr-partitions
+            </label>
+            <label style="font-size: 16;">
+                              if set when describing topics, only
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            show partitions whose isr count is
+        </p>
+        <p style="font-size: 16;">
+            less than the configured minimum.
+        </p>
+        <p style="font-size: 16;">
+            Not supported with the --zookeeper
+        </p>
+        <p style="font-size: 16;">
+            option.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --under-replicated-partitions
+            </label>
+            <label style="font-size: 16;">
+                           if set when describing topics, only
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            show under replicated partitions
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --version
+            </label>
+            <label style="font-size: 16;">
+                                               Display Kafka version.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --zookeeper
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: hosts&gt;              DEPRECATED, The connection string for
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            the zookeeper connection in the form
+        </p>
+        <p style="font-size: 16;">
+            host:port. Multiple hosts can be
+        </p>
+        <p style="font-size: 16;">
+            given to allow fail-over.
+        </p>
+    </body>
+</html>

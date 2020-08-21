@@ -1,0 +1,423 @@
+<html>
+    <body>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage: java [options] &lt;mainclass&gt; [args...]
+        </label>
+        <p style="font-size: 16;">
+            (to execute a class)
+        </p>
+        <p style="font-size: 16;">
+            or  java [options] -jar &lt;jarfile&gt; [args...]
+        </p>
+        <p style="font-size: 16;">
+            (to execute a jar file)
+        </p>
+        <p style="font-size: 16;">
+            or  java [options] -m &lt;module&gt;[/&lt;mainclass&gt;] [args...]
+        </p>
+        <p style="font-size: 16;">
+            java [options] --module &lt;module&gt;[/&lt;mainclass&gt;] [args...]
+        </p>
+        <p style="font-size: 16;">
+            (to execute the main class in a module)
+        </p>
+        <p style="font-size: 16;">
+            or  java [options] &lt;sourcefile&gt; [args]
+        </p>
+        <p style="font-size: 16;">
+            (to execute a single source-file program)
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Arguments following the main class, source file, -jar &lt;jarfile&gt;,
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -m
+            </label>
+            <label style="font-size: 16;">
+                or --module &lt;module&gt;/&lt;mainclass&gt; are passed as the arguments to
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            main class.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            where options include:
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -cp
+            </label>
+            <label style="font-size: 16;">
+                &lt;class search path of directories and zip/jar files&gt;
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -classpath
+            </label>
+            <label style="font-size: 16;">
+                &lt;class search path of directories and zip/jar files&gt;
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --class-path
+            </label>
+            <label style="font-size: 16;">
+                &lt;class search path of directories and zip/jar files&gt;
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            A : separated list of directories, JAR archives,
+        </p>
+        <p style="font-size: 16;">
+            and ZIP archives to search for class files.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -p
+            </label>
+            <label style="font-size: 16;">
+                &lt;module path&gt;
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --module-path
+            </label>
+            <label style="font-size: 16;">
+                &lt;module path&gt;...
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            A : separated list of directories, each directory
+        </p>
+        <p style="font-size: 16;">
+            is a directory of modules.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --upgrade-module-path
+            </label>
+            <label style="font-size: 16;">
+                &lt;module path&gt;...
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            A : separated list of directories, each directory
+        </p>
+        <p style="font-size: 16;">
+            is a directory of modules that replace upgradeable
+        </p>
+        <p style="font-size: 16;">
+            modules in the runtime image
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --add-modules
+            </label>
+            <label style="font-size: 16;">
+                &lt;module name&gt;[,&lt;module name&gt;...]
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            root modules to resolve in addition to the initial module.
+        </p>
+        <p style="font-size: 16;">
+            &lt;module name&gt; can also be ALL-DEFAULT, ALL-SYSTEM,
+        </p>
+        <p style="font-size: 16;">
+            ALL-MODULE-PATH.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --list-modules
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            list observable modules and exit
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -d
+            </label>
+            <label style="font-size: 16;">
+                &lt;module name&gt;
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --describe-module
+            </label>
+            <label style="font-size: 16;">
+                &lt;module name&gt;
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            describe a module and exit
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --dry-run
+            </label>
+            <label style="font-size: 16;">
+                    create VM and load main class but do not execute main method.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            The --dry-run option may be useful for validating the
+        </p>
+        <p style="font-size: 16;">
+            command-line options such as the module system configuration.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --validate-modules
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            validate all modules and exit
+        </p>
+        <p style="font-size: 16;">
+            The --validate-modules option may be useful for finding
+        </p>
+        <p style="font-size: 16;">
+            conflicts and other errors with modules on the module path.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -D&lt;name&gt;=&lt;value&gt;
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            set a system property
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -verbose:[class|module|gc|jni]
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            enable verbose output for the given subsystem
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -version
+            </label>
+            <label style="font-size: 16;">
+                     print product version to the error stream and exit
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --version
+            </label>
+            <label style="font-size: 16;">
+                    print product version to the output stream and exit
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -showversion
+            </label>
+            <label style="font-size: 16;">
+                 print product version to the error stream and continue
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --show-version
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            print product version to the output stream and continue
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --show-module-resolution
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            show module resolution output during startup
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -?
+            </label>
+            <label style="font-size: 16;">
+                -h -help
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            print this help message to the error stream
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --help
+            </label>
+            <label style="font-size: 16;">
+                       print this help message to the output stream
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -X
+            </label>
+            <label style="font-size: 16;">
+                           print help on extra options to the error stream
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --help-extra
+            </label>
+            <label style="font-size: 16;">
+                 print help on extra options to the output stream
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -ea[:&lt;packagename&gt;...|:&lt;classname&gt;]
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -enableassertions[:&lt;packagename&gt;...|:&lt;classname&gt;]
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            enable assertions with specified granularity
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -da[:&lt;packagename&gt;...|:&lt;classname&gt;]
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -disableassertions[:&lt;packagename&gt;...|:&lt;classname&gt;]
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            disable assertions with specified granularity
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -esa
+            </label>
+            <label style="font-size: 16;">
+                | -enablesystemassertions
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            enable system assertions
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -dsa
+            </label>
+            <label style="font-size: 16;">
+                | -disablesystemassertions
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            disable system assertions
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -agentlib:&lt;libname&gt;[=&lt;options&gt;]
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            load native agent library &lt;libname&gt;, e.g. -agentlib:jdwp
+        </p>
+        <p style="font-size: 16;">
+            see also -agentlib:jdwp=help
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -agentpath:&lt;pathname&gt;[=&lt;options&gt;]
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            load native agent library by full pathname
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -javaagent:&lt;jarpath&gt;[=&lt;options&gt;]
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            load Java programming language agent, see java.lang.instrument
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -splash:&lt;imagepath&gt;
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            show splash screen with specified image
+        </p>
+        <p style="font-size: 16;">
+            HiDPI scaled images are automatically supported and used
+        </p>
+        <p style="font-size: 16;">
+            if available. The unscaled image filename, e.g. image.ext,
+        </p>
+        <p style="font-size: 16;">
+            should always be passed as the argument to the -splash option.
+        </p>
+        <p style="font-size: 16;">
+            The most appropriate scaled image provided will be picked up
+        </p>
+        <p style="font-size: 16;">
+            automatically.
+        </p>
+        <p style="font-size: 16;">
+            See the SplashScreen API documentation for more information
+        </p>
+        <p style="font-size: 16;">
+            @argument files
+        </p>
+        <p style="font-size: 16;">
+            one or more argument files containing options
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -disable-@files
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            prevent further argument file expansion
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --enable-preview
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            allow classes to depend on preview features of this release
+        </p>
+        <p style="font-size: 16;">
+            To specify an argument for a long option, you can use --&lt;name&gt;=&lt;value&gt; or
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --&lt;name&gt;
+            </label>
+            <label style="font-size: 16;">
+                &lt;value&gt;.
+            </label>
+        </div>
+    </body>
+</html>

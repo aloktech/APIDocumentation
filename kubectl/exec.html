@@ -1,0 +1,140 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Execute a command in a container.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Get output from running &#x27;date&#x27; command from pod mypod, using the first container by default
+        </p>
+        <p style="font-size: 16;">
+            kubectl exec mypod -- date
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Get output from running &#x27;date&#x27; command in ruby-container from pod mypod
+        </p>
+        <p style="font-size: 16;">
+            kubectl exec mypod -c ruby-container -- date
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Switch to raw terminal mode, sends stdin to &#x27;bash&#x27; in ruby-container from pod mypod
+        </p>
+        <p style="font-size: 16;">
+            # and sends stdout/stderr from &#x27;bash&#x27; back to the client
+        </p>
+        <p style="font-size: 16;">
+            kubectl exec mypod -c ruby-container -i -t -- bash -il
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # List contents of /usr from the first container of pod mypod and sort by modification time.
+        </p>
+        <p style="font-size: 16;">
+            # If the command you want to execute in the pod has any flags in common (e.g. -i),
+        </p>
+        <p style="font-size: 16;">
+            # you must use two dashes (--) to separate your command&#x27;s flags/arguments.
+        </p>
+        <p style="font-size: 16;">
+            # Also note, do not surround your command and its flags/arguments with quotes
+        </p>
+        <p style="font-size: 16;">
+            # unless that is how you would execute it normally (i.e., do ls -t /usr, not &quot;ls -t /usr&quot;).
+        </p>
+        <p style="font-size: 16;">
+            kubectl exec mypod -i -t -- ls -t /usr
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Get output from running &#x27;date&#x27; command from the first pod of the deployment mydeployment, using the first container by default
+        </p>
+        <p style="font-size: 16;">
+            kubectl exec deploy/mydeployment -- date
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Get output from running &#x27;date&#x27; command from the first pod of the service myservice, using the first container by default
+        </p>
+        <p style="font-size: 16;">
+            kubectl exec svc/myservice -- date
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -c,
+            </label>
+            <label style="font-size: 16;">
+                --container=&#x27;&#x27;: Container name. If omitted, the first container in the pod will be chosen
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --filename=[]: to use to exec into the resource
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --pod-running-timeout=1m0s:
+            </label>
+            <label style="font-size: 16;">
+                The length of time (like 5s, 2m, or 3h, higher than zero) to wait until at least one pod is running
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -i,
+            </label>
+            <label style="font-size: 16;">
+                --stdin=false: Pass stdin to the container
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -t,
+            </label>
+            <label style="font-size: 16;">
+                --tty=false: Stdin is a TTY
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl exec (POD | TYPE/NAME) [-c CONTAINER] [flags] -- COMMAND [args...] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

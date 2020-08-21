@@ -1,0 +1,99 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:	docker swarm ca [OPTIONS]
+        </label>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Display and rotate the root CA
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --ca-cert
+            </label>
+            <label style="font-size: 16;">
+                pem-file          Path to the PEM-formatted root CA
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            certificate to use for the new cluster
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --ca-key
+            </label>
+            <label style="font-size: 16;">
+                pem-file           Path to the PEM-formatted root CA key
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            to use for the new cluster
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cert-expiry
+            </label>
+            <label style="font-size: 16;">
+                duration      Validity period for node certificates
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (ns|us|ms|s|m|h) (default 2160h0m0s)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -d,
+            </label>
+            <label style="font-size: 16;">
+                --detach                    Exit immediately instead of waiting for
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            the root rotation to converge
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --external-ca
+            </label>
+            <label style="font-size: 16;">
+                external-ca   Specifications of one or more
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            certificate signing endpoints
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -q,
+            </label>
+            <label style="font-size: 16;">
+                --quiet                     Suppress progress output
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --rotate
+            </label>
+            <label style="font-size: 16;">
+                                   Rotate the swarm CA - if no certificate
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            or key are provided, new ones will be
+        </p>
+        <p style="font-size: 16;">
+            generated
+        </p>
+    </body>
+</html>

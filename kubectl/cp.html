@@ -1,0 +1,122 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Copy files and directories to and from containers.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # !!!Important Note!!!
+        </p>
+        <p style="font-size: 16;">
+            # Requires that the &#x27;tar&#x27; binary is present in your container
+        </p>
+        <p style="font-size: 16;">
+            # image.  If &#x27;tar&#x27; is not present, &#x27;kubectl cp&#x27; will fail.
+        </p>
+        <p style="font-size: 16;">
+            #
+        </p>
+        <p style="font-size: 16;">
+            # For advanced use cases, such as symlinks, wildcard expansion or
+        </p>
+        <p style="font-size: 16;">
+            # file mode preservation consider using &#x27;kubectl exec&#x27;.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Copy /tmp/foo local file to /tmp/bar in a remote pod in namespace &lt;some-namespace&gt;
+        </p>
+        <p style="font-size: 16;">
+            tar cf - /tmp/foo | kubectl exec -i -n &lt;some-namespace&gt; &lt;some-pod&gt; -- tar xf - -C /tmp/bar
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Copy /tmp/foo from a remote pod to /tmp/bar locally
+        </p>
+        <p style="font-size: 16;">
+            kubectl exec -n &lt;some-namespace&gt; &lt;some-pod&gt; -- tar cf - /tmp/foo | tar xf - -C /tmp/bar
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Copy /tmp/foo_dir local directory to /tmp/bar_dir in a remote pod in the default namespace
+        </p>
+        <p style="font-size: 16;">
+            kubectl cp /tmp/foo_dir &lt;some-pod&gt;:/tmp/bar_dir
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Copy /tmp/foo local file to /tmp/bar in a remote pod in a specific container
+        </p>
+        <p style="font-size: 16;">
+            kubectl cp /tmp/foo &lt;some-pod&gt;:/tmp/bar -c &lt;specific-container&gt;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Copy /tmp/foo local file to /tmp/bar in a remote pod in namespace &lt;some-namespace&gt;
+        </p>
+        <p style="font-size: 16;">
+            kubectl cp /tmp/foo &lt;some-namespace&gt;/&lt;some-pod&gt;:/tmp/bar
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Copy /tmp/foo from a remote pod to /tmp/bar locally
+        </p>
+        <p style="font-size: 16;">
+            kubectl cp &lt;some-namespace&gt;/&lt;some-pod&gt;:/tmp/foo /tmp/bar
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -c,
+            </label>
+            <label style="font-size: 16;">
+                --container=&#x27;&#x27;: Container name. If omitted, the first container in the pod will be chosen
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --no-preserve=false:
+            </label>
+            <label style="font-size: 16;">
+                The copied file/directory&#x27;s ownership and permissions will not be preserved in the container
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl cp &lt;file-spec-src&gt; &lt;file-spec-dest&gt; [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

@@ -1,0 +1,208 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Creates a proxy server or application-level gateway between localhost and the Kubernetes API Server. It also allows serving static content over specified HTTP path. All incoming data enters through one port and gets forwarded to the remote kubernetes API Server port, except for the path matching the static content path.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # To proxy all of the kubernetes api and nothing else, use:
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            $ kubectl proxy --api-prefix=/
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # To proxy only part of the kubernetes api and also some static files:
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            $ kubectl proxy --www=/my/files --www-prefix=/static/ --api-prefix=/api/
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # The above lets you &#x27;curl localhost:8001/api/v1/pods&#x27;.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # To proxy the entire kubernetes api at a different root, use:
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            $ kubectl proxy --api-prefix=/custom/
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # The above lets you &#x27;curl localhost:8001/custom/api/v1/pods&#x27;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Run a proxy to kubernetes apiserver on port 8011, serving static content from ./local/www/
+        </p>
+        <p style="font-size: 16;">
+            kubectl proxy --port=8011 --www=./local/www/
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Run a proxy to kubernetes apiserver on an arbitrary local port.
+        </p>
+        <p style="font-size: 16;">
+            # The chosen port for the server will be output to stdout.
+        </p>
+        <p style="font-size: 16;">
+            kubectl proxy --port=0
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Run a proxy to kubernetes apiserver, changing the api prefix to k8s-api
+        </p>
+        <p style="font-size: 16;">
+            # This makes e.g. the pods api available at localhost:8001/k8s-api/v1/pods/
+        </p>
+        <p style="font-size: 16;">
+            kubectl proxy --api-prefix=/k8s-api
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --accept-hosts=&#x27;^localhost$,^127\.0\.0\.1$,^\[::1\]$&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Regular expression for hosts that the proxy should accept.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --accept-paths=&#x27;^.*&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Regular expression for paths that the proxy should accept.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --address=&#x27;127.0.0.1&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                The IP address on which to serve on.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --api-prefix=&#x27;/&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Prefix to serve the proxied API under.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --disable-filter=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, disable request filtering in the proxy. This is dangerous, and can leave you vulnerable to XSRF attacks, when used with an accessible port.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --keepalive=0s:
+            </label>
+            <label style="font-size: 16;">
+                keepalive specifies the keep-alive period for an active network connection. Set to 0 to disable keepalive.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -p,
+            </label>
+            <label style="font-size: 16;">
+                --port=8001: The port on which to run the proxy. Set to 0 to pick a random port.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --reject-methods=&#x27;^$&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Regular expression for HTTP methods that the proxy should reject (example --reject-methods=&#x27;POST,PUT,PATCH&#x27;).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --reject-paths=&#x27;^/api/.*/pods/.*/exec,^/api/.*/pods/.*/attach&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Regular expression for paths that the proxy should reject. Paths specified here will be rejected even accepted by --accept-paths.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -u,
+            </label>
+            <label style="font-size: 16;">
+                --unix-socket=&#x27;&#x27;: Unix socket on which to run the proxy.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -w,
+            </label>
+            <label style="font-size: 16;">
+                --www=&#x27;&#x27;: Also serve static files from the given directory under the specified prefix.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -P,
+            </label>
+            <label style="font-size: 16;">
+                --www-prefix=&#x27;/static/&#x27;: Prefix to serve static files under, if static file directory is specified.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl proxy [--port=PORT] [--www=static-dir] [--www-prefix=prefix] [--api-prefix=prefix] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

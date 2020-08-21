@@ -1,0 +1,160 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Display Resource (CPU/Memory/Storage) usage of pods.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            The &#x27;top pod&#x27; command allows you to see the resource consumption of pods.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Due to the metrics pipeline delay, they may be unavailable for a few minutes since pod creation.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Aliases:
+        </p>
+        <p style="font-size: 16;">
+            pod, pods, po
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Show metrics for all pods in the default namespace
+        </p>
+        <p style="font-size: 16;">
+            kubectl top pod
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Show metrics for all pods in the given namespace
+        </p>
+        <p style="font-size: 16;">
+            kubectl top pod --namespace=NAMESPACE
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Show metrics for a given pod and its containers
+        </p>
+        <p style="font-size: 16;">
+            kubectl top pod POD_NAME --containers
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Show metrics for the pods defined by label name=myLabel
+        </p>
+        <p style="font-size: 16;">
+            kubectl top pod -l name=myLabel
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -A,
+            </label>
+            <label style="font-size: 16;">
+                --all-namespaces=false: If present, list the requested object(s) across all namespaces. Namespace in current context is ignored even if specified with --namespace.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --containers=false:
+            </label>
+            <label style="font-size: 16;">
+                If present, print usage of containers within a pod.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --heapster-namespace=&#x27;kube-system&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Namespace Heapster service is located in
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --heapster-port=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Port name in service to use
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --heapster-scheme=&#x27;http&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Scheme (http or https) to connect to Heapster as
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --heapster-service=&#x27;heapster&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Name of Heapster service
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --no-headers=false:
+            </label>
+            <label style="font-size: 16;">
+                If present, print output without headers.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --selector=&#x27;&#x27;: Selector (label query) to filter on, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. -l key1=value1,key2=value2)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --sort-by=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                If non-empty, sort pods list using specified field. The field can be either &#x27;cpu&#x27; or &#x27;memory&#x27;.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl top pod [NAME | -l label] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

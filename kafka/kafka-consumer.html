@@ -1,0 +1,334 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            This tool helps to read data from Kafka topics and outputs it to standard output.
+        </p>
+        <p style="font-size: 16;">
+            Option                                   Description
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                ------
+            </label>
+            <label style="font-size: 16;">
+                                                  -----------
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --bootstrap-server
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: server to    REQUIRED: The server(s) to connect to.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            connect to&gt;
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --consumer-property
+            </label>
+            <label style="font-size: 16;">
+                &lt;String:             A mechanism to pass user-defined
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            consumer_prop&gt;                           properties in the form key=value to
+        </p>
+        <p style="font-size: 16;">
+            the consumer.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --consumer.config
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: config file&gt;  Consumer config properties file. Note
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            that [consumer-property] takes
+        </p>
+        <p style="font-size: 16;">
+            precedence over this config.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --enable-systest-events
+            </label>
+            <label style="font-size: 16;">
+                                 Log lifecycle events of the consumer
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            in addition to logging consumed
+        </p>
+        <p style="font-size: 16;">
+            messages. (This is specific for
+        </p>
+        <p style="font-size: 16;">
+            system tests.)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --formatter
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: class&gt;              The name of a class to use for
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            formatting kafka messages for
+        </p>
+        <p style="font-size: 16;">
+            display. (default: kafka.tools.
+        </p>
+        <p style="font-size: 16;">
+            DefaultMessageFormatter)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --from-beginning
+            </label>
+            <label style="font-size: 16;">
+                                        If the consumer does not already have
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            an established offset to consume
+        </p>
+        <p style="font-size: 16;">
+            from, start with the earliest
+        </p>
+        <p style="font-size: 16;">
+            message present in the log rather
+        </p>
+        <p style="font-size: 16;">
+            than the latest message.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --group
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: consumer group id&gt;      The consumer group id of the consumer.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --help
+            </label>
+            <label style="font-size: 16;">
+                                                  Print usage information.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --isolation-level
+            </label>
+            <label style="font-size: 16;">
+                &lt;String&gt;               Set to read_committed in order to
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            filter out transactional messages
+        </p>
+        <p style="font-size: 16;">
+            which are not committed. Set to
+        </p>
+        <p style="font-size: 16;">
+            read_uncommitted to read all
+        </p>
+        <p style="font-size: 16;">
+            messages. (default: read_uncommitted)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --key-deserializer
+            </label>
+            <label style="font-size: 16;">
+                &lt;String:
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            deserializer for key&gt;
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --max-messages
+            </label>
+            <label style="font-size: 16;">
+                &lt;Integer: num_messages&gt;   The maximum number of messages to
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            consume before exiting. If not set,
+        </p>
+        <p style="font-size: 16;">
+            consumption is continual.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --offset
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: consume offset&gt;        The offset id to consume from (a non-
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            negative number), or &#x27;earliest&#x27;
+        </p>
+        <p style="font-size: 16;">
+            which means from beginning, or
+        </p>
+        <p style="font-size: 16;">
+            &#x27;latest&#x27; which means from end
+        </p>
+        <p style="font-size: 16;">
+            (default: latest)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --partition
+            </label>
+            <label style="font-size: 16;">
+                &lt;Integer: partition&gt;         The partition to consume from.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            Consumption starts from the end of
+        </p>
+        <p style="font-size: 16;">
+            the partition unless &#x27;--offset&#x27; is
+        </p>
+        <p style="font-size: 16;">
+            specified.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --property
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: prop&gt;                The properties to initialize the
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            message formatter. Default
+        </p>
+        <p style="font-size: 16;">
+            properties include:
+        </p>
+        <p style="font-size: 16;">
+            print.timestamp=true|false
+        </p>
+        <p style="font-size: 16;">
+            print.key=true|false
+        </p>
+        <p style="font-size: 16;">
+            print.value=true|false
+        </p>
+        <p style="font-size: 16;">
+            key.separator=&lt;key.separator&gt;
+        </p>
+        <p style="font-size: 16;">
+            line.separator=&lt;line.separator&gt;
+        </p>
+        <p style="font-size: 16;">
+            key.deserializer=&lt;key.deserializer&gt;
+        </p>
+        <p style="font-size: 16;">
+            value.deserializer=&lt;value.
+        </p>
+        <p style="font-size: 16;">
+            deserializer&gt;
+        </p>
+        <p style="font-size: 16;">
+            Users can also pass in customized
+        </p>
+        <p style="font-size: 16;">
+            properties for their formatter; more
+        </p>
+        <p style="font-size: 16;">
+            specifically, users can pass in
+        </p>
+        <p style="font-size: 16;">
+            properties keyed with &#x27;key.
+        </p>
+        <p style="font-size: 16;">
+            deserializer.&#x27; and &#x27;value.
+        </p>
+        <p style="font-size: 16;">
+            deserializer.&#x27; prefixes to configure
+        </p>
+        <p style="font-size: 16;">
+            their deserializers.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --skip-message-on-error
+            </label>
+            <label style="font-size: 16;">
+                                 If there is an error when processing a
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            message, skip it instead of halt.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --timeout-ms
+            </label>
+            <label style="font-size: 16;">
+                &lt;Integer: timeout_ms&gt;       If specified, exit if no message is
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            available for consumption for the
+        </p>
+        <p style="font-size: 16;">
+            specified interval.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --topic
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: topic&gt;                  The topic id to consume on.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --value-deserializer
+            </label>
+            <label style="font-size: 16;">
+                &lt;String:
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            deserializer for values&gt;
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --version
+            </label>
+            <label style="font-size: 16;">
+                                               Display Kafka version.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --whitelist
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: whitelist&gt;          Regular expression specifying
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            whitelist of topics to include for
+        </p>
+        <p style="font-size: 16;">
+            consumption.
+        </p>
+    </body>
+</html>

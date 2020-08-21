@@ -1,0 +1,81 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Sets a cluster entry in kubeconfig.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Specifying a name that already exists will merge new fields on top of existing values for those fields.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Set only the server field on the e2e cluster entry without touching other values.
+        </p>
+        <p style="font-size: 16;">
+            kubectl config set-cluster e2e --server=https://1.2.3.4
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Embed certificate authority data for the e2e cluster entry
+        </p>
+        <p style="font-size: 16;">
+            kubectl config set-cluster e2e --certificate-authority=~/.kube/e2e/kubernetes.ca.crt
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Disable cert checking for the dev cluster entry
+        </p>
+        <p style="font-size: 16;">
+            kubectl config set-cluster e2e --insecure-skip-tls-verify=true
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Set custom TLS server name to use for validation for the e2e cluster entry
+        </p>
+        <p style="font-size: 16;">
+            kubectl config set-cluster e2e --tls-server-name=my-cluster-name
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --embed-certs=false:
+            </label>
+            <label style="font-size: 16;">
+                embed-certs for the cluster entry in kubeconfig
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl config set-cluster NAME [--server=server] [--certificate-authority=path/to/certificate/authority] [--insecure-skip-tls-verify=true] [--tls-server-name=example.com] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

@@ -1,0 +1,435 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Define and run multi-container applications with Docker.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]
+        </p>
+        <p style="font-size: 16;">
+            docker-compose -h|--help
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --file FILE             Specify an alternate compose file
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (default: docker-compose.yml)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -p,
+            </label>
+            <label style="font-size: 16;">
+                --project-name NAME     Specify an alternate project name
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (default: directory name)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -c,
+            </label>
+            <label style="font-size: 16;">
+                --context NAME          Specify a context name
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --verbose
+            </label>
+            <label style="font-size: 16;">
+                                  Show more output
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --log-level
+            </label>
+            <label style="font-size: 16;">
+                LEVEL           Set log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --no-ansi
+            </label>
+            <label style="font-size: 16;">
+                                  Do not print ANSI control characters
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -v,
+            </label>
+            <label style="font-size: 16;">
+                --version               Print version and exit
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -H,
+            </label>
+            <label style="font-size: 16;">
+                --host HOST             Daemon socket to connect to
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --tls
+            </label>
+            <label style="font-size: 16;">
+                                      Use TLS; implied by --tlsverify
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --tlscacert
+            </label>
+            <label style="font-size: 16;">
+                CA_PATH         Trust certs signed only by this CA
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --tlscert
+            </label>
+            <label style="font-size: 16;">
+                CLIENT_CERT_PATH  Path to TLS certificate file
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --tlskey
+            </label>
+            <label style="font-size: 16;">
+                TLS_KEY_PATH       Path to TLS key file
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --tlsverify
+            </label>
+            <label style="font-size: 16;">
+                                Use TLS and verify the remote
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --skip-hostname-check
+            </label>
+            <label style="font-size: 16;">
+                      Don&#x27;t check the daemon&#x27;s hostname against the
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            name specified in the client certificate
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --project-directory
+            </label>
+            <label style="font-size: 16;">
+                PATH    Specify an alternate working directory
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (default: the path of the Compose file)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --compatibility
+            </label>
+            <label style="font-size: 16;">
+                            If set, Compose will attempt to convert keys
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            in v3 files to their non-Swarm equivalent
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --env-file
+            </label>
+            <label style="font-size: 16;">
+                PATH             Specify an alternate environment file
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="build.html">
+                    build
+                </a>
+            </label>
+            <label>
+                Build or rebuild services
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="config.html">
+                    config
+                </a>
+            </label>
+            <label>
+                Validate and view the Compose file
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="create.html">
+                    create
+                </a>
+            </label>
+            <label>
+                Create services
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="down.html">
+                    down
+                </a>
+            </label>
+            <label>
+                Stop and remove containers, networks, images, and volumes
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="events.html">
+                    events
+                </a>
+            </label>
+            <label>
+                Receive real time events from containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="exec.html">
+                    exec
+                </a>
+            </label>
+            <label>
+                Execute a command in a running container
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="help.html">
+                    help
+                </a>
+            </label>
+            <label>
+                Get help on a command
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="images.html">
+                    images
+                </a>
+            </label>
+            <label>
+                List images
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="kill.html">
+                    kill
+                </a>
+            </label>
+            <label>
+                Kill containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="logs.html">
+                    logs
+                </a>
+            </label>
+            <label>
+                View output from containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="pause.html">
+                    pause
+                </a>
+            </label>
+            <label>
+                Pause services
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="port.html">
+                    port
+                </a>
+            </label>
+            <label>
+                Print the public port for a port binding
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="ps.html">
+                    ps
+                </a>
+            </label>
+            <label>
+                List containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="pull.html">
+                    pull
+                </a>
+            </label>
+            <label>
+                Pull service images
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="push.html">
+                    push
+                </a>
+            </label>
+            <label>
+                Push service images
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="restart.html">
+                    restart
+                </a>
+            </label>
+            <label>
+                Restart services
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="rm.html">
+                    rm
+                </a>
+            </label>
+            <label>
+                Remove stopped containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="run.html">
+                    run
+                </a>
+            </label>
+            <label>
+                Run a one-off command
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="scale.html">
+                    scale
+                </a>
+            </label>
+            <label>
+                Set number of containers for a service
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="start.html">
+                    start
+                </a>
+            </label>
+            <label>
+                Start services
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="stop.html">
+                    stop
+                </a>
+            </label>
+            <label>
+                Stop services
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="top.html">
+                    top
+                </a>
+            </label>
+            <label>
+                Display the running processes
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="unpause.html">
+                    unpause
+                </a>
+            </label>
+            <label>
+                Unpause services
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="up.html">
+                    up
+                </a>
+            </label>
+            <label>
+                Create and start containers
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="version.html">
+                    version
+                </a>
+            </label>
+            <label>
+                Show the Docker-Compose version information
+            </label>
+        </div>
+    </body>
+</html>

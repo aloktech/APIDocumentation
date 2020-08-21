@@ -1,0 +1,250 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Print the logs for a container in a pod or specified resource. If the pod has only one container, the container name is optional.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Return snapshot logs from pod nginx with only one container
+        </p>
+        <p style="font-size: 16;">
+            kubectl logs nginx
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Return snapshot logs from pod nginx with multi containers
+        </p>
+        <p style="font-size: 16;">
+            kubectl logs nginx --all-containers=true
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Return snapshot logs from all containers in pods defined by label app=nginx
+        </p>
+        <p style="font-size: 16;">
+            kubectl logs -lapp=nginx --all-containers=true
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Return snapshot of previous terminated ruby container logs from pod web-1
+        </p>
+        <p style="font-size: 16;">
+            kubectl logs -p -c ruby web-1
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Begin streaming the logs of the ruby container in pod web-1
+        </p>
+        <p style="font-size: 16;">
+            kubectl logs -f -c ruby web-1
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Begin streaming the logs from all containers in pods defined by label app=nginx
+        </p>
+        <p style="font-size: 16;">
+            kubectl logs -f -lapp=nginx --all-containers=true
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Display only the most recent 20 lines of output in pod nginx
+        </p>
+        <p style="font-size: 16;">
+            kubectl logs --tail=20 nginx
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Show all logs from pod nginx written in the last hour
+        </p>
+        <p style="font-size: 16;">
+            kubectl logs --since=1h nginx
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Show logs from a kubelet with an expired serving certificate
+        </p>
+        <p style="font-size: 16;">
+            kubectl logs --insecure-skip-tls-verify-backend nginx
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Return snapshot logs from first container of a job named hello
+        </p>
+        <p style="font-size: 16;">
+            kubectl logs job/hello
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Return snapshot logs from container nginx-1 of a deployment named nginx
+        </p>
+        <p style="font-size: 16;">
+            kubectl logs deployment/nginx -c nginx-1
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --all-containers=false:
+            </label>
+            <label style="font-size: 16;">
+                Get all containers&#x27; logs in the pod(s).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -c,
+            </label>
+            <label style="font-size: 16;">
+                --container=&#x27;&#x27;: Print the logs of this container
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --follow=false: Specify if the logs should be streamed.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --ignore-errors=false:
+            </label>
+            <label style="font-size: 16;">
+                If watching / following pod logs, allow for any errors that occur to be non-fatal
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --insecure-skip-tls-verify-backend=false:
+            </label>
+            <label style="font-size: 16;">
+                Skip verifying the identity of the kubelet that logs are requested from.  In theory, an attacker could provide invalid log content back. You might want to use this if your kubelet serving certificates have expired.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --limit-bytes=0:
+            </label>
+            <label style="font-size: 16;">
+                Maximum bytes of logs to return. Defaults to no limit.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --max-log-requests=5:
+            </label>
+            <label style="font-size: 16;">
+                Specify maximum number of concurrent logs to follow when using by a selector. Defaults to 5.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --pod-running-timeout=20s:
+            </label>
+            <label style="font-size: 16;">
+                The length of time (like 5s, 2m, or 3h, higher than zero) to wait until at least one pod is running
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --prefix=false:
+            </label>
+            <label style="font-size: 16;">
+                Prefix each log line with the log source (pod name and container name)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -p,
+            </label>
+            <label style="font-size: 16;">
+                --previous=false: If true, print the logs for the previous instance of the container in a pod if it exists.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --selector=&#x27;&#x27;: Selector (label query) to filter on.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --since=0s:
+            </label>
+            <label style="font-size: 16;">
+                Only return logs newer than a relative duration like 5s, 2m, or 3h. Defaults to all logs. Only one of since-time / since may be used.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --since-time=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Only return logs after a specific date (RFC3339). Defaults to all logs. Only one of since-time / since may be used.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --tail=-1:
+            </label>
+            <label style="font-size: 16;">
+                Lines of recent log file to display. Defaults to -1 with no selector, showing all log lines otherwise 10, if a selector is provided.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --timestamps=false:
+            </label>
+            <label style="font-size: 16;">
+                Include timestamps on each line in the log output
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl logs [-f] [-p] (POD | TYPE/NAME) [-c CONTAINER] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

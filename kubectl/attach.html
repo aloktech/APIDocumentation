@@ -1,0 +1,102 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Attach to a process that is already running inside an existing container.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Get output from running pod 123456-7890, using the first container by default
+        </p>
+        <p style="font-size: 16;">
+            kubectl attach 123456-7890
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Get output from ruby-container from pod 123456-7890
+        </p>
+        <p style="font-size: 16;">
+            kubectl attach 123456-7890 -c ruby-container
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Switch to raw terminal mode, sends stdin to &#x27;bash&#x27; in ruby-container from pod 123456-7890
+        </p>
+        <p style="font-size: 16;">
+            # and sends stdout/stderr from &#x27;bash&#x27; back to the client
+        </p>
+        <p style="font-size: 16;">
+            kubectl attach 123456-7890 -c ruby-container -i -t
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Get output from the first pod of a ReplicaSet named nginx
+        </p>
+        <p style="font-size: 16;">
+            kubectl attach rs/nginx
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -c,
+            </label>
+            <label style="font-size: 16;">
+                --container=&#x27;&#x27;: Container name. If omitted, the first container in the pod will be chosen
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --pod-running-timeout=1m0s:
+            </label>
+            <label style="font-size: 16;">
+                The length of time (like 5s, 2m, or 3h, higher than zero) to wait until at least one pod is running
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -i,
+            </label>
+            <label style="font-size: 16;">
+                --stdin=false: Pass stdin to the container
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -t,
+            </label>
+            <label style="font-size: 16;">
+                --tty=false: Stdin is a TTY
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl attach (POD | TYPE/NAME) -c CONTAINER [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

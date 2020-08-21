@@ -1,0 +1,147 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Create a priorityclass with the specified name, value, globalDefault and description
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Aliases:
+        </p>
+        <p style="font-size: 16;">
+            priorityclass, pc
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Create a priorityclass named high-priority
+        </p>
+        <p style="font-size: 16;">
+            kubectl create priorityclass high-priority --value=1000 --description=&quot;high priority&quot;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Create a priorityclass named default-priority that considered as the global default priority
+        </p>
+        <p style="font-size: 16;">
+            kubectl create priorityclass default-priority --value=1000 --global-default=true --description=&quot;default priority&quot;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Create a priorityclass named high-priority that can not preempt pods with lower priority
+        </p>
+        <p style="font-size: 16;">
+            kubectl create priorityclass high-priority --value=1000 --description=&quot;high priority&quot; --preemption-policy=&quot;Never&quot;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-missing-template-keys=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --description=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                description is an arbitrary string that usually provides guidelines on when this priority class should be used.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --dry-run=&#x27;none&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Must be &quot;none&quot;, &quot;server&quot;, or &quot;client&quot;. If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --global-default=false:
+            </label>
+            <label style="font-size: 16;">
+                global-default specifies whether this PriorityClass should be considered as the default priority.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --preemption-policy=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                preemption-policy is the policy for preempting pods with lower priority.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --save-config=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, the configuration of current object will be saved in its annotation. Otherwise, the annotation will be unchanged. This flag is useful when you want to perform kubectl apply on this object in the future.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --template=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --validate=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, use a schema to validate the input before sending it
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --value=0:
+            </label>
+            <label style="font-size: 16;">
+                the value of this priority class.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl create priorityclass NAME --value=VALUE --global-default=BOOL [--dry-run=server|client|none] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

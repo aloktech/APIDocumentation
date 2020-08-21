@@ -1,0 +1,82 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Gets the status of a local Kubernetes cluster.
+        </p>
+        <p style="font-size: 16;">
+            Exit status contains the status of minikube&#x27;s VM, cluster and Kubernetes encoded on it&#x27;s bits in this order from right to left.
+        </p>
+        <p style="font-size: 16;">
+            Eg: 7 meaning: 1 (for minikube NOK) + 2 (for cluster NOK) + 4 (for Kubernetes NOK)
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --format=&#x27;{{.Name}}
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            type: Control Plane
+        </p>
+        <p style="font-size: 16;">
+            host: {{.Host}}
+        </p>
+        <p style="font-size: 16;">
+            kubelet: {{.Kubelet}}
+        </p>
+        <p style="font-size: 16;">
+            apiserver: {{.APIServer}}
+        </p>
+        <p style="font-size: 16;">
+            kubeconfig: {{.Kubeconfig}}
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            &#x27;: Go template format string for the status output.  The format for Go templates can be found here: https://golang.org/pkg/text/template/
+        </p>
+        <p style="font-size: 16;">
+            For the list accessible variables for the template, see the struct values here: https://godoc.org/k8s.io/minikube/cmd/minikube/cmd#Status
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -n,
+            </label>
+            <label style="font-size: 16;">
+                --node=&#x27;&#x27;: The node to check status for. Defaults to control plane. Leave blank with default format for status on all nodes.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;text&#x27;: minikube status --output OUTPUT. json, text
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            minikube status [flags] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;minikube options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

@@ -1,0 +1,192 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Set a new size for a Deployment, ReplicaSet, Replication Controller, or StatefulSet.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Scale also allows users to specify one or more preconditions for the scale action.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            If --current-replicas or --resource-version is specified, it is validated before the scale is attempted, and it is guaranteed that the precondition holds true when the scale is sent to the server.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Scale a replicaset named &#x27;foo&#x27; to 3.
+        </p>
+        <p style="font-size: 16;">
+            kubectl scale --replicas=3 rs/foo
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Scale a resource identified by type and name specified in &quot;foo.yaml&quot; to 3.
+        </p>
+        <p style="font-size: 16;">
+            kubectl scale --replicas=3 -f foo.yaml
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # If the deployment named mysql&#x27;s current size is 2, scale mysql to 3.
+        </p>
+        <p style="font-size: 16;">
+            kubectl scale --current-replicas=2 --replicas=3 deployment/mysql
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Scale multiple replication controllers.
+        </p>
+        <p style="font-size: 16;">
+            kubectl scale --replicas=5 rc/foo rc/bar rc/baz
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Scale statefulset named &#x27;web&#x27; to 3.
+        </p>
+        <p style="font-size: 16;">
+            kubectl scale --replicas=3 statefulset/web
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --all=false:
+            </label>
+            <label style="font-size: 16;">
+                Select all resources in the namespace of the specified resource types
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-missing-template-keys=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --current-replicas=-1:
+            </label>
+            <label style="font-size: 16;">
+                Precondition for current size. Requires that the current size of the resource match this value in order to scale.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --filename=[]: Filename, directory, or URL to files identifying the resource to set a new size
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -k,
+            </label>
+            <label style="font-size: 16;">
+                --kustomize=&#x27;&#x27;: Process the kustomization directory. This flag can&#x27;t be used together with -f or -R.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --record=false:
+            </label>
+            <label style="font-size: 16;">
+                Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -R,
+            </label>
+            <label style="font-size: 16;">
+                --recursive=false: Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --replicas=0:
+            </label>
+            <label style="font-size: 16;">
+                The new desired number of replicas. Required.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --resource-version=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Precondition for resource version. Requires that the current resource version match this value in order to scale.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --selector=&#x27;&#x27;: Selector (label query) to filter on, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. -l key1=value1,key2=value2)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --template=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --timeout=0s:
+            </label>
+            <label style="font-size: 16;">
+                The length of time to wait before giving up on a scale operation, zero means don&#x27;t wait. Any other values should contain a corresponding time unit (e.g. 1s, 2m, 3h).
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl scale [--resource-version=version] [--current-replicas=count] --replicas=COUNT (-f FILENAME | TYPE NAME) [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

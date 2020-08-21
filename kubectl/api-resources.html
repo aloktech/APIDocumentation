@@ -1,0 +1,141 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Print the supported API resources on the server
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Print the supported API Resources
+        </p>
+        <p style="font-size: 16;">
+            kubectl api-resources
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Print the supported API Resources with more information
+        </p>
+        <p style="font-size: 16;">
+            kubectl api-resources -o wide
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Print the supported API Resources sorted by a column
+        </p>
+        <p style="font-size: 16;">
+            kubectl api-resources --sort-by=name
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Print the supported namespaced resources
+        </p>
+        <p style="font-size: 16;">
+            kubectl api-resources --namespaced=true
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Print the supported non-namespaced resources
+        </p>
+        <p style="font-size: 16;">
+            kubectl api-resources --namespaced=false
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Print the supported API Resources with specific APIGroup
+        </p>
+        <p style="font-size: 16;">
+            kubectl api-resources --api-group=extensions
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --api-group=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Limit to resources in the specified API group.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cached=false:
+            </label>
+            <label style="font-size: 16;">
+                Use the cached list of resources if available.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --namespaced=true:
+            </label>
+            <label style="font-size: 16;">
+                If false, non-namespaced resources will be returned, otherwise returning namespaced resources by default.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --no-headers=false:
+            </label>
+            <label style="font-size: 16;">
+                When using the default or custom-column output format, don&#x27;t print headers (default print headers).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output format. One of: wide|name.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --sort-by=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                If non-empty, sort nodes list using specified field. The field can be either &#x27;name&#x27; or &#x27;kind&#x27;.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --verbs=[]:
+            </label>
+            <label style="font-size: 16;">
+                Limit to resources that support the specified verbs.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl api-resources [flags] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

@@ -1,0 +1,702 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            OpenShift Client
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            This client helps you develop, build, deploy, and run your applications on any OpenShift or Kubernetes compatible platform. It also includes the administrative commands for managing a cluster under the &#x27;adm&#x27; subcommand.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            oc [flags]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Basic Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="types.html">
+                    types
+                </a>
+            </label>
+            <label>
+                An introduction to concepts and types
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="login.html">
+                    login
+                </a>
+            </label>
+            <label>
+                Log in to a server
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="new-project.html">
+                    new-project
+                </a>
+            </label>
+            <label>
+                Request a new project
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="new-app.html">
+                    new-app
+                </a>
+            </label>
+            <label>
+                Create a new application
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="status.html">
+                    status
+                </a>
+            </label>
+            <label>
+                Show an overview of the current project
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="project.html">
+                    project
+                </a>
+            </label>
+            <label>
+                Switch to another project
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="projects.html">
+                    projects
+                </a>
+            </label>
+            <label>
+                Display existing projects
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="explain.html">
+                    explain
+                </a>
+            </label>
+            <label>
+                Documentation of resources
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="cluster.html">
+                    cluster
+                </a>
+            </label>
+            <label>
+                Start and stop OpenShift cluster
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Build and Deploy Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="rollout.html">
+                    rollout
+                </a>
+            </label>
+            <label>
+                Manage a Kubernetes deployment or OpenShift deployment config
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="rollback.html">
+                    rollback
+                </a>
+            </label>
+            <label>
+                Revert part of an application back to a previous deployment
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="new-build.html">
+                    new-build
+                </a>
+            </label>
+            <label>
+                Create a new build configuration
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="start-build.html">
+                    start-build
+                </a>
+            </label>
+            <label>
+                Start a new build
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="cancel-build.html">
+                    cancel-build
+                </a>
+            </label>
+            <label>
+                Cancel running, pending, or new builds
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="import-image.html">
+                    import-image
+                </a>
+            </label>
+            <label>
+                Imports images from a Docker registry
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="tag.html">
+                    tag
+                </a>
+            </label>
+            <label>
+                Tag existing images into image streams
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Application Management Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="get.html">
+                    get
+                </a>
+            </label>
+            <label>
+                Display one or many resources
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="describe.html">
+                    describe
+                </a>
+            </label>
+            <label>
+                Show details of a specific resource or group of resources
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="edit.html">
+                    edit
+                </a>
+            </label>
+            <label>
+                Edit a resource on the server
+            </label>
+        </div>
+        <label style="font-weight: bold;font-size: 16;">
+            set             Commands that help set specific features on objects
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="label.html">
+                    label
+                </a>
+            </label>
+            <label>
+                Update the labels on a resource
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="annotate.html">
+                    annotate
+                </a>
+            </label>
+            <label>
+                Update the annotations on a resource
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="expose.html">
+                    expose
+                </a>
+            </label>
+            <label>
+                Expose a replicated application as a service or route
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="delete.html">
+                    delete
+                </a>
+            </label>
+            <label>
+                Delete one or more resources
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="scale.html">
+                    scale
+                </a>
+            </label>
+            <label>
+                Change the number of pods in a deployment
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="autoscale.html">
+                    autoscale
+                </a>
+            </label>
+            <label>
+                Autoscale a deployment config, deployment, replication controller, or replica set
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="secrets.html">
+                    secrets
+                </a>
+            </label>
+            <label>
+                Manage secrets
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="serviceaccounts.html">
+                    serviceaccounts
+                </a>
+            </label>
+            <label>
+                Manage service accounts in your project
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Troubleshooting and Debugging Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="logs.html">
+                    logs
+                </a>
+            </label>
+            <label>
+                Print the logs for a resource
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="rsh.html">
+                    rsh
+                </a>
+            </label>
+            <label>
+                Start a shell session in a pod
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="rsync.html">
+                    rsync
+                </a>
+            </label>
+            <label>
+                Copy files between local filesystem and a pod
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="port-forward.html">
+                    port-forward
+                </a>
+            </label>
+            <label>
+                Forward one or more local ports to a pod
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="debug.html">
+                    debug
+                </a>
+            </label>
+            <label>
+                Launch a new instance of a pod for debugging
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="exec.html">
+                    exec
+                </a>
+            </label>
+            <label>
+                Execute a command in a container
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="proxy.html">
+                    proxy
+                </a>
+            </label>
+            <label>
+                Run a proxy to the Kubernetes API server
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="attach.html">
+                    attach
+                </a>
+            </label>
+            <label>
+                Attach to a running container
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="run.html">
+                    run
+                </a>
+            </label>
+            <label>
+                Run a particular image on the cluster
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="cp.html">
+                    cp
+                </a>
+            </label>
+            <label>
+                Copy files and directories to and from containers.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="wait.html">
+                    wait
+                </a>
+            </label>
+            <label>
+                Experimental: Wait for one condition on one or many resources
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Advanced Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="adm.html">
+                    adm
+                </a>
+            </label>
+            <label>
+                Tools for managing a cluster
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="create.html">
+                    create
+                </a>
+            </label>
+            <label>
+                Create a resource from a file or from stdin.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="replace.html">
+                    replace
+                </a>
+            </label>
+            <label>
+                Replace a resource by filename or stdin
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="apply.html">
+                    apply
+                </a>
+            </label>
+            <label>
+                Apply a configuration to a resource by filename or stdin
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="patch.html">
+                    patch
+                </a>
+            </label>
+            <label>
+                Update field(s) of a resource using strategic merge patch
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="process.html">
+                    process
+                </a>
+            </label>
+            <label>
+                Process a template into list of resources
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="export.html">
+                    export
+                </a>
+            </label>
+            <label>
+                Export resources so they can be used elsewhere
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="extract.html">
+                    extract
+                </a>
+            </label>
+            <label>
+                Extract secrets or config maps to disk
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="idle.html">
+                    idle
+                </a>
+            </label>
+            <label>
+                Idle scalable resources
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="observe.html">
+                    observe
+                </a>
+            </label>
+            <label>
+                Observe changes to resources and react to them (experimental)
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="policy.html">
+                    policy
+                </a>
+            </label>
+            <label>
+                Manage authorization policy
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="auth.html">
+                    auth
+                </a>
+            </label>
+            <label>
+                Inspect authorization
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="convert.html">
+                    convert
+                </a>
+            </label>
+            <label>
+                Convert config files between different API versions
+            </label>
+        </div>
+        <label style="font-weight: bold;font-size: 16;">
+            import          Commands that import applications
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="image.html">
+                    image
+                </a>
+            </label>
+            <label>
+                Useful commands for managing images
+            </label>
+        </div>
+        <label style="font-weight: bold;font-size: 16;">
+            registry        Commands for working with the registry
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="api-versions.html">
+                    api-versions
+                </a>
+            </label>
+            <label>
+                Print the supported API versions on the server, in the form of &quot;group/version&quot;
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="api-resources.html">
+                    api-resources
+                </a>
+            </label>
+            <label>
+                Print the supported API resources on the server
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Settings Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="logout.html">
+                    logout
+                </a>
+            </label>
+            <label>
+                End the current server session
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="config.html">
+                    config
+                </a>
+            </label>
+            <label>
+                Change configuration files for the client
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="whoami.html">
+                    whoami
+                </a>
+            </label>
+            <label>
+                Return information about the current session
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="completion.html">
+                    completion
+                </a>
+            </label>
+            <label>
+                Output shell completion code for the specified shell (bash or zsh)
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Other Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="ex.html">
+                    ex
+                </a>
+            </label>
+            <label>
+                Experimental commands under active development
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="help.html">
+                    help
+                </a>
+            </label>
+            <label>
+                Help about any command
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="plugin.html">
+                    plugin
+                </a>
+            </label>
+            <label>
+                Runs a command-line plugin
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="version.html">
+                    version
+                </a>
+            </label>
+            <label>
+                Display client and server versions
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;oc &lt;command&gt; --help&quot; for more information about a given command.
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;oc options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

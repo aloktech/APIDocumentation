@@ -1,0 +1,89 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            List the fields for supported resources
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            This command describes the fields associated with each supported API resource. Fields are identified via a simple JSONPath identifier:
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            &lt;type&gt;.&lt;fieldName&gt;[.&lt;fieldName&gt;]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Add the --recursive flag to display all of the fields at once without descriptions. Information about each field is retrieved from the server in OpenAPI format.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl api-resources&quot; for a complete list of supported resources.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Get the documentation of the resource and its fields
+        </p>
+        <p style="font-size: 16;">
+            kubectl explain pods
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Get the documentation of a specific field of a resource
+        </p>
+        <p style="font-size: 16;">
+            kubectl explain pods.spec.containers
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --api-version=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Get different explanations for particular API version
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --recursive=false:
+            </label>
+            <label style="font-size: 16;">
+                Print the fields of fields (Currently only 1 level deep)
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl explain RESOURCE [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

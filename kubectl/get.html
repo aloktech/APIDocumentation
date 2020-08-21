@@ -1,0 +1,322 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Display one or many resources
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Prints a table of the most important information about the specified resources. You can filter the list using a label selector and the --selector flag. If the desired resource type is namespaced you will only see results in your current namespace unless you pass --all-namespaces.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Uninitialized objects are not shown unless --include-uninitialized is passed.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            By specifying the output as &#x27;template&#x27; and providing a Go template as the value of the --template flag, you can filter the attributes of the fetched resources.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl api-resources&quot; for a complete list of supported resources.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # List all pods in ps output format.
+        </p>
+        <p style="font-size: 16;">
+            kubectl get pods
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # List all pods in ps output format with more information (such as node name).
+        </p>
+        <p style="font-size: 16;">
+            kubectl get pods -o wide
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # List a single replication controller with specified NAME in ps output format.
+        </p>
+        <p style="font-size: 16;">
+            kubectl get replicationcontroller web
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # List deployments in JSON output format, in the &quot;v1&quot; version of the &quot;apps&quot; API group:
+        </p>
+        <p style="font-size: 16;">
+            kubectl get deployments.v1.apps -o json
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # List a single pod in JSON output format.
+        </p>
+        <p style="font-size: 16;">
+            kubectl get -o json pod web-pod-13je7
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # List a pod identified by type and name specified in &quot;pod.yaml&quot; in JSON output format.
+        </p>
+        <p style="font-size: 16;">
+            kubectl get -f pod.yaml -o json
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # List resources from a directory with kustomization.yaml - e.g. dir/kustomization.yaml.
+        </p>
+        <p style="font-size: 16;">
+            kubectl get -k dir/
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Return only the phase value of the specified pod.
+        </p>
+        <p style="font-size: 16;">
+            kubectl get -o template pod/web-pod-13je7 --template={{.status.phase}}
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # List resource information in custom columns.
+        </p>
+        <p style="font-size: 16;">
+            kubectl get pod test-pod -o custom-columns=CONTAINER:.spec.containers[0].name,IMAGE:.spec.containers[0].image
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # List all replication controllers and services together in ps output format.
+        </p>
+        <p style="font-size: 16;">
+            kubectl get rc,services
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # List one or more resources by their type and names.
+        </p>
+        <p style="font-size: 16;">
+            kubectl get rc/web service/frontend pods/web-pod-13je7
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -A,
+            </label>
+            <label style="font-size: 16;">
+                --all-namespaces=false: If present, list the requested object(s) across all namespaces. Namespace in current context is ignored even if specified with --namespace.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-missing-template-keys=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --chunk-size=500:
+            </label>
+            <label style="font-size: 16;">
+                Return large lists in chunks rather than all at once. Pass 0 to disable. This flag is beta and may change in the future.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --field-selector=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Selector (field query) to filter on, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --filename=[]: Filename, directory, or URL to files identifying the resource to get from a server.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --ignore-not-found=false:
+            </label>
+            <label style="font-size: 16;">
+                If the requested object does not exist the command will return exit code 0.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -k,
+            </label>
+            <label style="font-size: 16;">
+                --kustomize=&#x27;&#x27;: Process the kustomization directory. This flag can&#x27;t be used together with -f or -R.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -L,
+            </label>
+            <label style="font-size: 16;">
+                --label-columns=[]: Accepts a comma separated list of labels that are going to be presented as columns. Names are case-sensitive. You can also use multiple flag options like -L label1 -L label2...
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --no-headers=false:
+            </label>
+            <label style="font-size: 16;">
+                When using the default or custom-column output format, don&#x27;t print headers (default print headers).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output format. One of: json|yaml|wide|name|custom-columns=...|custom-columns-file=...|go-template=...|go-template-file=...|jsonpath=...|jsonpath-file=... See custom columns [http://kubernetes.io/docs/user-guide/kubectl-overview/#custom-columns], golang template [http://golang.org/pkg/text/template/#pkg-overview] and jsonpath template [http://kubernetes.io/docs/user-guide/jsonpath].
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --output-watch-events=false:
+            </label>
+            <label style="font-size: 16;">
+                Output watch event objects when --watch or --watch-only is used. Existing objects are output as initial ADDED events.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --raw=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Raw URI to request from the server.  Uses the transport specified by the kubeconfig file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -R,
+            </label>
+            <label style="font-size: 16;">
+                --recursive=false: Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --selector=&#x27;&#x27;: Selector (label query) to filter on, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. -l key1=value1,key2=value2)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --server-print=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, have the server return the appropriate table output. Supports extension APIs and CRDs.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --show-kind=false:
+            </label>
+            <label style="font-size: 16;">
+                If present, list the resource type for the requested object(s).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --show-labels=false:
+            </label>
+            <label style="font-size: 16;">
+                When printing, show all labels as the last column (default hide labels column)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --sort-by=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                If non-empty, sort list types using this field specification.  The field specification is expressed as a JSONPath expression (e.g. &#x27;{.metadata.name}&#x27;). The field in the API resource specified by this JSONPath expression must be an integer or a string.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --template=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -w,
+            </label>
+            <label style="font-size: 16;">
+                --watch=false: After listing/getting the requested object, watch for changes. Uninitialized objects are excluded if no object name is provided.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --watch-only=false:
+            </label>
+            <label style="font-size: 16;">
+                Watch for changes to the requested object(s), without listing/getting first.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl get [(-o|--output=)json|yaml|wide|custom-columns=...|custom-columns-file=...|go-template=...|go-template-file=...|jsonpath=...|jsonpath-file=...] (TYPE[.VERSION][.GROUP] [NAME | -l label] | TYPE[.VERSION][.GROUP]/NAME ...) [flags] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

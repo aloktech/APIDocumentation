@@ -1,0 +1,121 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Output shell completion code for the specified shell (bash or zsh). The shell code must be evaluated to provide interactive completion of kubectl commands.  This can be done by sourcing it from the .bash_profile.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Detailed instructions on how to do this are available here: https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Note for zsh users: [1] zsh completions are only supported in versions of zsh &gt;= 5.2
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Installing bash completion on macOS using homebrew
+        </p>
+        <p style="font-size: 16;">
+            ## If running Bash 3.2 included with macOS
+        </p>
+        <p style="font-size: 16;">
+            brew install bash-completion
+        </p>
+        <p style="font-size: 16;">
+            ## or, if running Bash 4.1+
+        </p>
+        <p style="font-size: 16;">
+            brew install bash-completion@2
+        </p>
+        <p style="font-size: 16;">
+            ## If kubectl is installed via homebrew, this should start working immediately.
+        </p>
+        <p style="font-size: 16;">
+            ## If you&#x27;ve installed via other means, you may need add the completion to your completion directory
+        </p>
+        <p style="font-size: 16;">
+            kubectl completion bash &gt; $(brew --prefix)/etc/bash_completion.d/kubectl
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Installing bash completion on Linux
+        </p>
+        <p style="font-size: 16;">
+            ## If bash-completion is not installed on Linux, please install the &#x27;bash-completion&#x27; package
+        </p>
+        <p style="font-size: 16;">
+            ## via your distribution&#x27;s package manager.
+        </p>
+        <p style="font-size: 16;">
+            ## Load the kubectl completion code for bash into the current shell
+        </p>
+        <p style="font-size: 16;">
+            source &lt;(kubectl completion bash)
+        </p>
+        <p style="font-size: 16;">
+            ## Write bash completion code to a file and source if from .bash_profile
+        </p>
+        <p style="font-size: 16;">
+            kubectl completion bash &gt; ~/.kube/completion.bash.inc
+        </p>
+        <p style="font-size: 16;">
+            printf &quot;
+        </p>
+        <p style="font-size: 16;">
+            # Kubectl shell completion
+        </p>
+        <p style="font-size: 16;">
+            source &#x27;$HOME/.kube/completion.bash.inc&#x27;
+        </p>
+        <p style="font-size: 16;">
+            &quot; &gt;&gt; $HOME/.bash_profile
+        </p>
+        <p style="font-size: 16;">
+            source $HOME/.bash_profile
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Load the kubectl completion code for zsh[1] into the current shell
+        </p>
+        <p style="font-size: 16;">
+            source &lt;(kubectl completion zsh)
+        </p>
+        <p style="font-size: 16;">
+            # Set the kubectl completion code for zsh[1] to autoload on startup
+        </p>
+        <p style="font-size: 16;">
+            kubectl completion zsh &gt; &quot;${fpath[1]}/_kubectl&quot;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl completion SHELL [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

@@ -1,0 +1,335 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Create a resource from a file or from stdin.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            JSON and YAML formats are accepted.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Create a pod using the data in pod.json.
+        </p>
+        <p style="font-size: 16;">
+            kubectl create -f ./pod.json
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Create a pod based on the JSON passed into stdin.
+        </p>
+        <p style="font-size: 16;">
+            cat pod.json | kubectl create -f -
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Edit the data in docker-registry.yaml in JSON then create the resource using the edited data.
+        </p>
+        <p style="font-size: 16;">
+            kubectl create -f docker-registry.yaml --edit -o json
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold;font-size: 16;">
+            Available Commands:
+        </label>
+        <div style="font-size: 16;">
+            <label>
+                <a href="clusterrole.html">
+                    clusterrole
+                </a>
+            </label>
+            <label>
+                Create a ClusterRole.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="clusterrolebinding.html">
+                    clusterrolebinding
+                </a>
+            </label>
+            <label>
+                Create a ClusterRoleBinding for a particular ClusterRole
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="configmap.html">
+                    configmap
+                </a>
+            </label>
+            <label>
+                Create a configmap from a local file, directory or literal value
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="cronjob.html">
+                    cronjob
+                </a>
+            </label>
+            <label>
+                Create a cronjob with the specified name.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="deployment.html">
+                    deployment
+                </a>
+            </label>
+            <label>
+                Create a deployment with the specified name.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="job.html">
+                    job
+                </a>
+            </label>
+            <label>
+                Create a job with the specified name.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="namespace.html">
+                    namespace
+                </a>
+            </label>
+            <label>
+                Create a namespace with the specified name
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="poddisruptionbudget.html">
+                    poddisruptionbudget
+                </a>
+            </label>
+            <label>
+                Create a pod disruption budget with the specified name.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="priorityclass.html">
+                    priorityclass
+                </a>
+            </label>
+            <label>
+                Create a priorityclass with the specified name.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="quota.html">
+                    quota
+                </a>
+            </label>
+            <label>
+                Create a quota with the specified name.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="role.html">
+                    role
+                </a>
+            </label>
+            <label>
+                Create a role with single rule.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="rolebinding.html">
+                    rolebinding
+                </a>
+            </label>
+            <label>
+                Create a RoleBinding for a particular Role or ClusterRole
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="secret.html">
+                    secret
+                </a>
+            </label>
+            <label>
+                Create a secret using specified subcommand
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="service.html">
+                    service
+                </a>
+            </label>
+            <label>
+                Create a service using specified subcommand.
+            </label>
+        </div>
+        <div style="font-size: 16;">
+            <label>
+                <a href="serviceaccount.html">
+                    serviceaccount
+                </a>
+            </label>
+            <label>
+                Create a service account with the specified name
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-missing-template-keys=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --dry-run=&#x27;none&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Must be &quot;none&quot;, &quot;server&quot;, or &quot;client&quot;. If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --edit=false:
+            </label>
+            <label style="font-size: 16;">
+                Edit the API resource before creating
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --filename=[]: Filename, directory, or URL to files to use to create the resource
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -k,
+            </label>
+            <label style="font-size: 16;">
+                --kustomize=&#x27;&#x27;: Process the kustomization directory. This flag can&#x27;t be used together with -f or -R.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --raw=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Raw URI to POST to the server.  Uses the transport specified by the kubeconfig file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --record=false:
+            </label>
+            <label style="font-size: 16;">
+                Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -R,
+            </label>
+            <label style="font-size: 16;">
+                --recursive=false: Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --save-config=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, the configuration of current object will be saved in its annotation. Otherwise, the annotation will be unchanged. This flag is useful when you want to perform kubectl apply on this object in the future.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --selector=&#x27;&#x27;: Selector (label query) to filter on, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. -l key1=value1,key2=value2)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --template=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --validate=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, use a schema to validate the input before sending it
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --windows-line-endings=false:
+            </label>
+            <label style="font-size: 16;">
+                Only relevant if --edit=true. Defaults to the line ending native to your platform.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl create -f FILENAME [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl &lt;command&gt; --help&quot; for more information about a given command.
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

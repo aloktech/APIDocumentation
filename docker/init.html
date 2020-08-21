@@ -1,0 +1,223 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:	docker swarm init [OPTIONS]
+        </label>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Initialize a swarm
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --advertise-addr
+            </label>
+            <label style="font-size: 16;">
+                string                  Advertised address
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (format: &lt;ip|interface&gt;[:port])
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --autolock
+            </label>
+            <label style="font-size: 16;">
+                                              Enable manager autolocking
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (requiring an unlock key
+        </p>
+        <p style="font-size: 16;">
+            to start a stopped manager)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --availability
+            </label>
+            <label style="font-size: 16;">
+                string                    Availability of the node
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (&quot;active&quot;|&quot;pause&quot;|&quot;drain&quot;)
+        </p>
+        <p style="font-size: 16;">
+            (default &quot;active&quot;)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cert-expiry
+            </label>
+            <label style="font-size: 16;">
+                duration                   Validity period for node
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            certificates
+        </p>
+        <p style="font-size: 16;">
+            (ns|us|ms|s|m|h) (default
+        </p>
+        <p style="font-size: 16;">
+            2160h0m0s)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --data-path-addr
+            </label>
+            <label style="font-size: 16;">
+                string                  Address or interface to
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            use for data path traffic
+        </p>
+        <p style="font-size: 16;">
+            (format: &lt;ip|interface&gt;)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --data-path-port
+            </label>
+            <label style="font-size: 16;">
+                uint32                  Port number to use for
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            data path traffic (1024 -
+        </p>
+        <p style="font-size: 16;">
+            49151). If no value is set
+        </p>
+        <p style="font-size: 16;">
+            or is set to 0, the
+        </p>
+        <p style="font-size: 16;">
+            default port (4789) is used.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --default-addr-pool
+            </label>
+            <label style="font-size: 16;">
+                ipNetSlice           default address pool in
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            CIDR format (default [])
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --default-addr-pool-mask-length
+            </label>
+            <label style="font-size: 16;">
+                uint32   default address pool
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            subnet mask length (default 24)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --dispatcher-heartbeat
+            </label>
+            <label style="font-size: 16;">
+                duration          Dispatcher heartbeat
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            period (ns|us|ms|s|m|h)
+        </p>
+        <p style="font-size: 16;">
+            (default 5s)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --external-ca
+            </label>
+            <label style="font-size: 16;">
+                external-ca                Specifications of one or
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            more certificate signing
+        </p>
+        <p style="font-size: 16;">
+            endpoints
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --force-new-cluster
+            </label>
+            <label style="font-size: 16;">
+                                     Force create a new cluster
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            from current state
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --listen-addr
+            </label>
+            <label style="font-size: 16;">
+                node-addr                  Listen address (format:
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            &lt;ip|interface&gt;[:port])
+        </p>
+        <p style="font-size: 16;">
+            (default 0.0.0.0:2377)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --max-snapshots
+            </label>
+            <label style="font-size: 16;">
+                uint                     Number of additional Raft
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            snapshots to retain
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --snapshot-interval
+            </label>
+            <label style="font-size: 16;">
+                uint                 Number of log entries
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            between Raft snapshots
+        </p>
+        <p style="font-size: 16;">
+            (default 10000)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --task-history-limit
+            </label>
+            <label style="font-size: 16;">
+                int                 Task history retention
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            limit (default 5)
+        </p>
+    </body>
+</html>

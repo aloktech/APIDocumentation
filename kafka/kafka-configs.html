@@ -1,0 +1,679 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            This tool helps to manipulate and describe entity config for a topic, client, user or broker
+        </p>
+        <p style="font-size: 16;">
+            Option                                 Description
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                ------
+            </label>
+            <label style="font-size: 16;">
+                                                -----------
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --add-config
+            </label>
+            <label style="font-size: 16;">
+                &lt;String&gt;                  Key Value pairs of configs to add.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            Square brackets can be used to group
+        </p>
+        <p style="font-size: 16;">
+            values which contain commas: &#x27;k1=v1,
+        </p>
+        <p style="font-size: 16;">
+            k2=[v1,v2,v2],k3=v3&#x27;. The following
+        </p>
+        <p style="font-size: 16;">
+            is a list of valid configurations:
+        </p>
+        <p style="font-size: 16;">
+            For entity-type &#x27;topics&#x27;:
+        </p>
+        <p style="font-size: 16;">
+            cleanup.policy
+        </p>
+        <p style="font-size: 16;">
+            compression.type
+        </p>
+        <p style="font-size: 16;">
+            delete.retention.ms
+        </p>
+        <p style="font-size: 16;">
+            file.delete.delay.ms
+        </p>
+        <p style="font-size: 16;">
+            flush.messages
+        </p>
+        <p style="font-size: 16;">
+            flush.ms
+        </p>
+        <p style="font-size: 16;">
+            follower.replication.throttled.
+        </p>
+        <p style="font-size: 16;">
+            replicas
+        </p>
+        <p style="font-size: 16;">
+            index.interval.bytes
+        </p>
+        <p style="font-size: 16;">
+            leader.replication.throttled.replicas
+        </p>
+        <p style="font-size: 16;">
+            max.compaction.lag.ms
+        </p>
+        <p style="font-size: 16;">
+            max.message.bytes
+        </p>
+        <p style="font-size: 16;">
+            message.downconversion.enable
+        </p>
+        <p style="font-size: 16;">
+            message.format.version
+        </p>
+        <p style="font-size: 16;">
+            message.timestamp.difference.max.ms
+        </p>
+        <p style="font-size: 16;">
+            message.timestamp.type
+        </p>
+        <p style="font-size: 16;">
+            min.cleanable.dirty.ratio
+        </p>
+        <p style="font-size: 16;">
+            min.compaction.lag.ms
+        </p>
+        <p style="font-size: 16;">
+            min.insync.replicas
+        </p>
+        <p style="font-size: 16;">
+            preallocate
+        </p>
+        <p style="font-size: 16;">
+            retention.bytes
+        </p>
+        <p style="font-size: 16;">
+            retention.ms
+        </p>
+        <p style="font-size: 16;">
+            segment.bytes
+        </p>
+        <p style="font-size: 16;">
+            segment.index.bytes
+        </p>
+        <p style="font-size: 16;">
+            segment.jitter.ms
+        </p>
+        <p style="font-size: 16;">
+            segment.ms
+        </p>
+        <p style="font-size: 16;">
+            unclean.leader.election.enable
+        </p>
+        <p style="font-size: 16;">
+            For entity-type &#x27;brokers&#x27;:
+        </p>
+        <p style="font-size: 16;">
+            advertised.listeners
+        </p>
+        <p style="font-size: 16;">
+            background.threads
+        </p>
+        <p style="font-size: 16;">
+            compression.type
+        </p>
+        <p style="font-size: 16;">
+            follower.replication.throttled.rate
+        </p>
+        <p style="font-size: 16;">
+            leader.replication.throttled.rate
+        </p>
+        <p style="font-size: 16;">
+            listener.security.protocol.map
+        </p>
+        <p style="font-size: 16;">
+            listeners
+        </p>
+        <p style="font-size: 16;">
+            log.cleaner.backoff.ms
+        </p>
+        <p style="font-size: 16;">
+            log.cleaner.dedupe.buffer.size
+        </p>
+        <p style="font-size: 16;">
+            log.cleaner.delete.retention.ms
+        </p>
+        <p style="font-size: 16;">
+            log.cleaner.io.buffer.load.factor
+        </p>
+        <p style="font-size: 16;">
+            log.cleaner.io.buffer.size
+        </p>
+        <p style="font-size: 16;">
+            log.cleaner.io.max.bytes.per.second
+        </p>
+        <p style="font-size: 16;">
+            log.cleaner.max.compaction.lag.ms
+        </p>
+        <p style="font-size: 16;">
+            log.cleaner.min.cleanable.ratio
+        </p>
+        <p style="font-size: 16;">
+            log.cleaner.min.compaction.lag.ms
+        </p>
+        <p style="font-size: 16;">
+            log.cleaner.threads
+        </p>
+        <p style="font-size: 16;">
+            log.cleanup.policy
+        </p>
+        <p style="font-size: 16;">
+            log.flush.interval.messages
+        </p>
+        <p style="font-size: 16;">
+            log.flush.interval.ms
+        </p>
+        <p style="font-size: 16;">
+            log.index.interval.bytes
+        </p>
+        <p style="font-size: 16;">
+            log.index.size.max.bytes
+        </p>
+        <p style="font-size: 16;">
+            log.message.downconversion.enable
+        </p>
+        <p style="font-size: 16;">
+            log.message.timestamp.difference.max.
+        </p>
+        <p style="font-size: 16;">
+            ms
+        </p>
+        <p style="font-size: 16;">
+            log.message.timestamp.type
+        </p>
+        <p style="font-size: 16;">
+            log.preallocate
+        </p>
+        <p style="font-size: 16;">
+            log.retention.bytes
+        </p>
+        <p style="font-size: 16;">
+            log.retention.ms
+        </p>
+        <p style="font-size: 16;">
+            log.roll.jitter.ms
+        </p>
+        <p style="font-size: 16;">
+            log.roll.ms
+        </p>
+        <p style="font-size: 16;">
+            log.segment.bytes
+        </p>
+        <p style="font-size: 16;">
+            log.segment.delete.delay.ms
+        </p>
+        <p style="font-size: 16;">
+            max.connections
+        </p>
+        <p style="font-size: 16;">
+            max.connections.per.ip
+        </p>
+        <p style="font-size: 16;">
+            max.connections.per.ip.overrides
+        </p>
+        <p style="font-size: 16;">
+            message.max.bytes
+        </p>
+        <p style="font-size: 16;">
+            metric.reporters
+        </p>
+        <p style="font-size: 16;">
+            min.insync.replicas
+        </p>
+        <p style="font-size: 16;">
+            num.io.threads
+        </p>
+        <p style="font-size: 16;">
+            num.network.threads
+        </p>
+        <p style="font-size: 16;">
+            num.recovery.threads.per.data.dir
+        </p>
+        <p style="font-size: 16;">
+            num.replica.fetchers
+        </p>
+        <p style="font-size: 16;">
+            principal.builder.class
+        </p>
+        <p style="font-size: 16;">
+            replica.alter.log.dirs.io.max.bytes.
+        </p>
+        <p style="font-size: 16;">
+            per.second
+        </p>
+        <p style="font-size: 16;">
+            sasl.enabled.mechanisms
+        </p>
+        <p style="font-size: 16;">
+            sasl.jaas.config
+        </p>
+        <p style="font-size: 16;">
+            sasl.kerberos.kinit.cmd
+        </p>
+        <p style="font-size: 16;">
+            sasl.kerberos.min.time.before.relogin
+        </p>
+        <p style="font-size: 16;">
+            sasl.kerberos.principal.to.local.rules
+        </p>
+        <p style="font-size: 16;">
+            sasl.kerberos.service.name
+        </p>
+        <p style="font-size: 16;">
+            sasl.kerberos.ticket.renew.jitter
+        </p>
+        <p style="font-size: 16;">
+            sasl.kerberos.ticket.renew.window.
+        </p>
+        <p style="font-size: 16;">
+            factor
+        </p>
+        <p style="font-size: 16;">
+            sasl.login.refresh.buffer.seconds
+        </p>
+        <p style="font-size: 16;">
+            sasl.login.refresh.min.period.seconds
+        </p>
+        <p style="font-size: 16;">
+            sasl.login.refresh.window.factor
+        </p>
+        <p style="font-size: 16;">
+            sasl.login.refresh.window.jitter
+        </p>
+        <p style="font-size: 16;">
+            sasl.mechanism.inter.broker.protocol
+        </p>
+        <p style="font-size: 16;">
+            ssl.cipher.suites
+        </p>
+        <p style="font-size: 16;">
+            ssl.client.auth
+        </p>
+        <p style="font-size: 16;">
+            ssl.enabled.protocols
+        </p>
+        <p style="font-size: 16;">
+            ssl.endpoint.identification.algorithm
+        </p>
+        <p style="font-size: 16;">
+            ssl.key.password
+        </p>
+        <p style="font-size: 16;">
+            ssl.keymanager.algorithm
+        </p>
+        <p style="font-size: 16;">
+            ssl.keystore.location
+        </p>
+        <p style="font-size: 16;">
+            ssl.keystore.password
+        </p>
+        <p style="font-size: 16;">
+            ssl.keystore.type
+        </p>
+        <p style="font-size: 16;">
+            ssl.protocol
+        </p>
+        <p style="font-size: 16;">
+            ssl.provider
+        </p>
+        <p style="font-size: 16;">
+            ssl.secure.random.implementation
+        </p>
+        <p style="font-size: 16;">
+            ssl.trustmanager.algorithm
+        </p>
+        <p style="font-size: 16;">
+            ssl.truststore.location
+        </p>
+        <p style="font-size: 16;">
+            ssl.truststore.password
+        </p>
+        <p style="font-size: 16;">
+            ssl.truststore.type
+        </p>
+        <p style="font-size: 16;">
+            unclean.leader.election.enable
+        </p>
+        <p style="font-size: 16;">
+            For entity-type &#x27;users&#x27;:
+        </p>
+        <p style="font-size: 16;">
+            SCRAM-SHA-256
+        </p>
+        <p style="font-size: 16;">
+            SCRAM-SHA-512
+        </p>
+        <p style="font-size: 16;">
+            consumer_byte_rate
+        </p>
+        <p style="font-size: 16;">
+            producer_byte_rate
+        </p>
+        <p style="font-size: 16;">
+            request_percentage
+        </p>
+        <p style="font-size: 16;">
+            For entity-type &#x27;clients&#x27;:
+        </p>
+        <p style="font-size: 16;">
+            consumer_byte_rate
+        </p>
+        <p style="font-size: 16;">
+            producer_byte_rate
+        </p>
+        <p style="font-size: 16;">
+            request_percentage
+        </p>
+        <p style="font-size: 16;">
+            Entity types &#x27;users&#x27; and &#x27;clients&#x27; may
+        </p>
+        <p style="font-size: 16;">
+            be specified together to update
+        </p>
+        <p style="font-size: 16;">
+            config for clients of a specific
+        </p>
+        <p style="font-size: 16;">
+            user.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --all
+            </label>
+            <label style="font-size: 16;">
+                                                 List all configs for the given entity
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (includes static configuration when
+        </p>
+        <p style="font-size: 16;">
+            the entity type is brokers)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --alter
+            </label>
+            <label style="font-size: 16;">
+                                               Alter the configuration for the entity.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --bootstrap-server
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: server to  The Kafka server to connect to. This
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            connect to&gt;                            is required for describing and
+        </p>
+        <p style="font-size: 16;">
+            altering broker configs.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --broker
+            </label>
+            <label style="font-size: 16;">
+                &lt;String&gt;                      The broker&#x27;s ID.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --broker-defaults
+            </label>
+            <label style="font-size: 16;">
+                                     The config defaults for all brokers.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --broker-logger
+            </label>
+            <label style="font-size: 16;">
+                &lt;String&gt;               The broker&#x27;s ID for its logger config.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --client
+            </label>
+            <label style="font-size: 16;">
+                &lt;String&gt;                      The client&#x27;s ID.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --client-defaults
+            </label>
+            <label style="font-size: 16;">
+                                     The config defaults for all clients.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --command-config
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: command      Property file containing configs to be
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            config property file&gt;                  passed to Admin Client. This is used
+        </p>
+        <p style="font-size: 16;">
+            only with --bootstrap-server option
+        </p>
+        <p style="font-size: 16;">
+            for describing and altering broker
+        </p>
+        <p style="font-size: 16;">
+            configs.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --delete-config
+            </label>
+            <label style="font-size: 16;">
+                &lt;String&gt;               config keys to remove &#x27;k1,k2&#x27;
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --describe
+            </label>
+            <label style="font-size: 16;">
+                                            List configs for the given entity.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --entity-default
+            </label>
+            <label style="font-size: 16;">
+                                      Default entity name for
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            clients/users/brokers (applies to
+        </p>
+        <p style="font-size: 16;">
+            corresponding entity type in command
+        </p>
+        <p style="font-size: 16;">
+            line)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --entity-name
+            </label>
+            <label style="font-size: 16;">
+                &lt;String&gt;                 Name of entity (topic name/client
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            id/user principal name/broker id)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --entity-type
+            </label>
+            <label style="font-size: 16;">
+                &lt;String&gt;                 Type of entity
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (topics/clients/users/brokers/broker-
+        </p>
+        <p style="font-size: 16;">
+            loggers)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --force
+            </label>
+            <label style="font-size: 16;">
+                                               Suppress console prompts
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --help
+            </label>
+            <label style="font-size: 16;">
+                                                Print usage information.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --topic
+            </label>
+            <label style="font-size: 16;">
+                &lt;String&gt;                       The topic&#x27;s name.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --user
+            </label>
+            <label style="font-size: 16;">
+                &lt;String&gt;                        The user&#x27;s principal name.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --user-defaults
+            </label>
+            <label style="font-size: 16;">
+                                       The config defaults for all users.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --version
+            </label>
+            <label style="font-size: 16;">
+                                             Display Kafka version.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --zk-tls-config-file
+            </label>
+            <label style="font-size: 16;">
+                &lt;String:          Identifies the file where ZooKeeper
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            ZooKeeper TLS configuration&gt;           client TLS connectivity properties
+        </p>
+        <p style="font-size: 16;">
+            are defined.  Any properties other
+        </p>
+        <p style="font-size: 16;">
+            than zookeeper.clientCnxnSocket,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.cipher.suites,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.client.enable,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.crl.enable, zookeeper.
+        </p>
+        <p style="font-size: 16;">
+            ssl.enabled.protocols, zookeeper.ssl.
+        </p>
+        <p style="font-size: 16;">
+            endpoint.identification.algorithm,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.keystore.location,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.keystore.password,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.keystore.type,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.ocsp.enable, zookeeper.
+        </p>
+        <p style="font-size: 16;">
+            ssl.protocol, zookeeper.ssl.
+        </p>
+        <p style="font-size: 16;">
+            truststore.location, zookeeper.ssl.
+        </p>
+        <p style="font-size: 16;">
+            truststore.password, zookeeper.ssl.
+        </p>
+        <p style="font-size: 16;">
+            truststore.type are ignored.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --zookeeper
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: urls&gt;             DEPRECATED. The connection string for
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            the zookeeper connection in the form
+        </p>
+        <p style="font-size: 16;">
+            host:port. Multiple URLS can be
+        </p>
+        <p style="font-size: 16;">
+            given to allow fail-over. Replaced
+        </p>
+        <p style="font-size: 16;">
+            by --bootstrap-server, REQUIRED
+        </p>
+        <p style="font-size: 16;">
+            unless --bootstrap-server is given.
+        </p>
+    </body>
+</html>

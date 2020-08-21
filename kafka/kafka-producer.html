@@ -1,0 +1,395 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Missing required option(s) [bootstrap-server]
+        </p>
+        <p style="font-size: 16;">
+            Option                                   Description
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                ------
+            </label>
+            <label style="font-size: 16;">
+                                                  -----------
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --batch-size
+            </label>
+            <label style="font-size: 16;">
+                &lt;Integer: size&gt;             Number of messages to send in a single
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            batch if they are not being sent
+        </p>
+        <p style="font-size: 16;">
+            synchronously. (default: 200)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --bootstrap-server
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: server to    REQUIRED unless --broker-list
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            connect to&gt;                              (deprecated) is specified. The server
+        </p>
+        <p style="font-size: 16;">
+            (s) to connect to. The broker list
+        </p>
+        <p style="font-size: 16;">
+            string in the form HOST1:PORT1,HOST2:
+        </p>
+        <p style="font-size: 16;">
+            PORT2.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --broker-list
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: broker-list&gt;      DEPRECATED, use --bootstrap-server
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            instead; ignored if --bootstrap-
+        </p>
+        <p style="font-size: 16;">
+            server is specified.  The broker
+        </p>
+        <p style="font-size: 16;">
+            list string in the form HOST1:PORT1,
+        </p>
+        <p style="font-size: 16;">
+            HOST2:PORT2.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --compression-codec
+            </label>
+            <label style="font-size: 16;">
+                [String:             The compression codec: either &#x27;none&#x27;,
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            compression-codec]                       &#x27;gzip&#x27;, &#x27;snappy&#x27;, &#x27;lz4&#x27;, or &#x27;zstd&#x27;.
+        </p>
+        <p style="font-size: 16;">
+            If specified without value, then it
+        </p>
+        <p style="font-size: 16;">
+            defaults to &#x27;gzip&#x27;
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --help
+            </label>
+            <label style="font-size: 16;">
+                                                  Print usage information.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --line-reader
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: reader_class&gt;     The class name of the class to use for
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            reading lines from standard in. By
+        </p>
+        <p style="font-size: 16;">
+            default each line is read as a
+        </p>
+        <p style="font-size: 16;">
+            separate message. (default: kafka.
+        </p>
+        <p style="font-size: 16;">
+            tools.
+        </p>
+        <p style="font-size: 16;">
+            ConsoleProducer$LineMessageReader)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --max-block-ms
+            </label>
+            <label style="font-size: 16;">
+                &lt;Long: max block on       The max time that the producer will
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            send&gt;                                    block for during a send request
+        </p>
+        <p style="font-size: 16;">
+            (default: 60000)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --max-memory-bytes
+            </label>
+            <label style="font-size: 16;">
+                &lt;Long: total memory   The total memory used by the producer
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            in bytes&gt;                                to buffer records waiting to be sent
+        </p>
+        <p style="font-size: 16;">
+            to the server. (default: 33554432)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --max-partition-memory-bytes
+            </label>
+            <label style="font-size: 16;">
+                &lt;Long:      The buffer size allocated for a
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            memory in bytes per partition&gt;           partition. When records are received
+        </p>
+        <p style="font-size: 16;">
+            which are smaller than this size the
+        </p>
+        <p style="font-size: 16;">
+            producer will attempt to
+        </p>
+        <p style="font-size: 16;">
+            optimistically group them together
+        </p>
+        <p style="font-size: 16;">
+            until this size is reached.
+        </p>
+        <p style="font-size: 16;">
+            (default: 16384)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --message-send-max-retries
+            </label>
+            <label style="font-size: 16;">
+                &lt;Integer&gt;     Brokers can fail receiving the message
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            for multiple reasons, and being
+        </p>
+        <p style="font-size: 16;">
+            unavailable transiently is just one
+        </p>
+        <p style="font-size: 16;">
+            of them. This property specifies the
+        </p>
+        <p style="font-size: 16;">
+            number of retires before the
+        </p>
+        <p style="font-size: 16;">
+            producer give up and drop this
+        </p>
+        <p style="font-size: 16;">
+            message. (default: 3)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --metadata-expiry-ms
+            </label>
+            <label style="font-size: 16;">
+                &lt;Long: metadata     The period of time in milliseconds
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            expiration interval&gt;                     after which we force a refresh of
+        </p>
+        <p style="font-size: 16;">
+            metadata even if we haven&#x27;t seen any
+        </p>
+        <p style="font-size: 16;">
+            leadership changes. (default: 300000)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --producer-property
+            </label>
+            <label style="font-size: 16;">
+                &lt;String:             A mechanism to pass user-defined
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            producer_prop&gt;                           properties in the form key=value to
+        </p>
+        <p style="font-size: 16;">
+            the producer.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --producer.config
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: config file&gt;  Producer config properties file. Note
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            that [producer-property] takes
+        </p>
+        <p style="font-size: 16;">
+            precedence over this config.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --property
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: prop&gt;                A mechanism to pass user-defined
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            properties in the form key=value to
+        </p>
+        <p style="font-size: 16;">
+            the message reader. This allows
+        </p>
+        <p style="font-size: 16;">
+            custom configuration for a user-
+        </p>
+        <p style="font-size: 16;">
+            defined message reader. Default
+        </p>
+        <p style="font-size: 16;">
+            properties include:
+        </p>
+        <p style="font-size: 16;">
+            parse.key=true|false
+        </p>
+        <p style="font-size: 16;">
+            key.separator=&lt;key.separator&gt;
+        </p>
+        <p style="font-size: 16;">
+            ignore.error=true|false
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --request-required-acks
+            </label>
+            <label style="font-size: 16;">
+                &lt;String:         The required acks of the producer
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            request required acks&gt;                   requests (default: 1)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --request-timeout-ms
+            </label>
+            <label style="font-size: 16;">
+                &lt;Integer: request   The ack timeout of the producer
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            timeout ms&gt;                              requests. Value must be non-negative
+        </p>
+        <p style="font-size: 16;">
+            and non-zero (default: 1500)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --retry-backoff-ms
+            </label>
+            <label style="font-size: 16;">
+                &lt;Integer&gt;             Before each retry, the producer
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            refreshes the metadata of relevant
+        </p>
+        <p style="font-size: 16;">
+            topics. Since leader election takes
+        </p>
+        <p style="font-size: 16;">
+            a bit of time, this property
+        </p>
+        <p style="font-size: 16;">
+            specifies the amount of time that
+        </p>
+        <p style="font-size: 16;">
+            the producer waits before refreshing
+        </p>
+        <p style="font-size: 16;">
+            the metadata. (default: 100)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --socket-buffer-size
+            </label>
+            <label style="font-size: 16;">
+                &lt;Integer: size&gt;     The size of the tcp RECV size.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            (default: 102400)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --sync
+            </label>
+            <label style="font-size: 16;">
+                                                  If set message send requests to the
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            brokers are synchronously, one at a
+        </p>
+        <p style="font-size: 16;">
+            time as they arrive.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --timeout
+            </label>
+            <label style="font-size: 16;">
+                &lt;Integer: timeout_ms&gt;          If set and the producer is running in
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            asynchronous mode, this gives the
+        </p>
+        <p style="font-size: 16;">
+            maximum amount of time a message
+        </p>
+        <p style="font-size: 16;">
+            will queue awaiting sufficient batch
+        </p>
+        <p style="font-size: 16;">
+            size. The value is given in ms.
+        </p>
+        <p style="font-size: 16;">
+            (default: 1000)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --topic
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: topic&gt;                  REQUIRED: The topic id to produce
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            messages to.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --version
+            </label>
+            <label style="font-size: 16;">
+                                               Display Kafka version.
+            </label>
+        </div>
+    </body>
+</html>

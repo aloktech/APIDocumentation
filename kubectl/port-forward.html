@@ -1,0 +1,122 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Forward one or more local ports to a pod. This command requires the node to have &#x27;socat&#x27; installed.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use resource type/name such as deployment/mydeployment to select a pod. Resource type defaults to &#x27;pod&#x27; if omitted.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            If there are multiple pods matching the criteria, a pod will be selected automatically. The forwarding session ends when the selected pod terminates, and rerun of the command is needed to resume forwarding.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Listen on ports 5000 and 6000 locally, forwarding data to/from ports 5000 and 6000 in the pod
+        </p>
+        <p style="font-size: 16;">
+            kubectl port-forward pod/mypod 5000 6000
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Listen on ports 5000 and 6000 locally, forwarding data to/from ports 5000 and 6000 in a pod selected by the deployment
+        </p>
+        <p style="font-size: 16;">
+            kubectl port-forward deployment/mydeployment 5000 6000
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Listen on ports 5000 and 6000 locally, forwarding data to/from ports 5000 and 6000 in a pod selected by the service
+        </p>
+        <p style="font-size: 16;">
+            kubectl port-forward service/myservice 5000 6000
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Listen on port 8888 locally, forwarding to 5000 in the pod
+        </p>
+        <p style="font-size: 16;">
+            kubectl port-forward pod/mypod 8888:5000
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Listen on port 8888 on all addresses, forwarding to 5000 in the pod
+        </p>
+        <p style="font-size: 16;">
+            kubectl port-forward --address 0.0.0.0 pod/mypod 8888:5000
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Listen on port 8888 on localhost and selected IP, forwarding to 5000 in the pod
+        </p>
+        <p style="font-size: 16;">
+            kubectl port-forward --address localhost,10.19.21.23 pod/mypod 8888:5000
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Listen on a random port locally, forwarding to 5000 in the pod
+        </p>
+        <p style="font-size: 16;">
+            kubectl port-forward pod/mypod :5000
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --address=[localhost]:
+            </label>
+            <label style="font-size: 16;">
+                Addresses to listen on (comma separated). Only accepts IP addresses or localhost as a value. When localhost is supplied, kubectl will try to bind on both 127.0.0.1 and ::1 and will fail if neither of these addresses are available to bind.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --pod-running-timeout=1m0s:
+            </label>
+            <label style="font-size: 16;">
+                The length of time (like 5s, 2m, or 3h, higher than zero) to wait until at least one pod is running
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl port-forward TYPE/NAME [options] [LOCAL_PORT:]REMOTE_PORT [...[LOCAL_PORT_N:]REMOTE_PORT_N]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

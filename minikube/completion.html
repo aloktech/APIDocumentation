@@ -1,0 +1,82 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Outputs minikube shell completion for the given shell (bash, zsh or fish)
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            This depends on the bash-completion binary.  Example installation instructions:
+        </p>
+        <p style="font-size: 16;">
+            OS X:
+        </p>
+        <p style="font-size: 16;">
+            $ brew install bash-completion
+        </p>
+        <p style="font-size: 16;">
+            $ source $(brew --prefix)/etc/bash_completion
+        </p>
+        <p style="font-size: 16;">
+            $ minikube completion bash &gt; ~/.minikube-completion  # for bash users
+        </p>
+        <p style="font-size: 16;">
+            $ minikube completion zsh &gt; ~/.minikube-completion  # for zsh users
+        </p>
+        <p style="font-size: 16;">
+            $ source ~/.minikube-completion
+        </p>
+        <p style="font-size: 16;">
+            $ minikube completion fish &gt; ~/.config/fish/completions/minikube.fish # for fish users
+        </p>
+        <p style="font-size: 16;">
+            Ubuntu:
+        </p>
+        <p style="font-size: 16;">
+            $ apt-get install bash-completion
+        </p>
+        <p style="font-size: 16;">
+            $ source /etc/bash-completion
+        </p>
+        <p style="font-size: 16;">
+            $ source &lt;(minikube completion bash) # for bash users
+        </p>
+        <p style="font-size: 16;">
+            $ source &lt;(minikube completion zsh) # for zsh users
+        </p>
+        <p style="font-size: 16;">
+            $ minikube completion fish &gt; ~/.config/fish/completions/minikube.fish # for fish users
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Additionally, you may want to output the completion to a file and source in your .bashrc
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Note for zsh users: [1] zsh completions are only supported in versions of zsh &gt;= 5.2
+        </p>
+        <p style="font-size: 16;">
+            Note for fish users: [2] please refer to this docs for more details https://fishshell.com/docs/current/#tab-completion
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            minikube completion SHELL [flags] [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;minikube options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

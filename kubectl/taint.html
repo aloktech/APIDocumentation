@@ -1,0 +1,164 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Update the taints on one or more nodes.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            *  A taint consists of a key, value, and effect. As an argument here, it is expressed as key=value:effect.
+        </p>
+        <p style="font-size: 16;">
+            *  The key must begin with a letter or number, and may contain letters, numbers, hyphens, dots, and underscores, up to  253 characters.
+        </p>
+        <p style="font-size: 16;">
+            *  Optionally, the key can begin with a DNS subdomain prefix and a single &#x27;/&#x27;, like example.com/my-app
+        </p>
+        <p style="font-size: 16;">
+            *  The value is optional. If given, it must begin with a letter or number, and may contain letters, numbers, hyphens, dots, and underscores, up to  63 characters.
+        </p>
+        <p style="font-size: 16;">
+            *  The effect must be NoSchedule, PreferNoSchedule or NoExecute.
+        </p>
+        <p style="font-size: 16;">
+            *  Currently taint can only apply to node.
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            # Update node &#x27;foo&#x27; with a taint with key &#x27;dedicated&#x27; and value &#x27;special-user&#x27; and effect &#x27;NoSchedule&#x27;.
+        </p>
+        <p style="font-size: 16;">
+            # If a taint with that key and effect already exists, its value is replaced as specified.
+        </p>
+        <p style="font-size: 16;">
+            kubectl taint nodes foo dedicated=special-user:NoSchedule
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Remove from node &#x27;foo&#x27; the taint with key &#x27;dedicated&#x27; and effect &#x27;NoSchedule&#x27; if one exists.
+        </p>
+        <p style="font-size: 16;">
+            kubectl taint nodes foo dedicated:NoSchedule-
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Remove from node &#x27;foo&#x27; all the taints with key &#x27;dedicated&#x27;
+        </p>
+        <p style="font-size: 16;">
+            kubectl taint nodes foo dedicated-
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Add a taint with key &#x27;dedicated&#x27; on nodes having label mylabel=X
+        </p>
+        <p style="font-size: 16;">
+            kubectl taint node -l myLabel=X  dedicated=foo:PreferNoSchedule
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Add to node &#x27;foo&#x27; a taint with key &#x27;bar&#x27; and no value
+        </p>
+        <p style="font-size: 16;">
+            kubectl taint nodes foo bar:NoSchedule
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --all=false:
+            </label>
+            <label style="font-size: 16;">
+                Select all nodes in the cluster
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-missing-template-keys=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --dry-run=&#x27;none&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Must be &quot;none&quot;, &quot;server&quot;, or &quot;client&quot;. If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output=&#x27;&#x27;: Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --overwrite=false:
+            </label>
+            <label style="font-size: 16;">
+                If true, allow taints to be overwritten, otherwise reject taint updates that overwrite existing taints.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -l,
+            </label>
+            <label style="font-size: 16;">
+                --selector=&#x27;&#x27;: Selector (label query) to filter on, supports &#x27;=&#x27;, &#x27;==&#x27;, and &#x27;!=&#x27;.(e.g. -l key1=value1,key2=value2)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --template=&#x27;&#x27;:
+            </label>
+            <label style="font-size: 16;">
+                Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --validate=true:
+            </label>
+            <label style="font-size: 16;">
+                If true, use a schema to validate the input before sending it
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            kubectl taint NODE NAME KEY_1=VAL_1:TAINT_EFFECT_1 ... KEY_N=VAL_N:TAINT_EFFECT_N [options]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+        </p>
+    </body>
+</html>

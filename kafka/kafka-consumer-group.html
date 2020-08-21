@@ -1,0 +1,504 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            This tool helps to list all consumer groups, describe a consumer group, delete consumer group info, or reset consumer group offsets.
+        </p>
+        <p style="font-size: 16;">
+            Option                                  Description
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                ------
+            </label>
+            <label style="font-size: 16;">
+                                                 -----------
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --all-groups
+            </label>
+            <label style="font-size: 16;">
+                                           Apply to all consumer groups.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --all-topics
+            </label>
+            <label style="font-size: 16;">
+                                           Consider all topics assigned to a
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            group in the `reset-offsets` process.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --bootstrap-server
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: server to   REQUIRED: The server(s) to connect to.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            connect to&gt;
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --by-duration
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: duration&gt;        Reset offsets to offset by duration
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            from current timestamp. Format:
+        </p>
+        <p style="font-size: 16;">
+            &#x27;PnDTnHnMnS&#x27;
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --command-config
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: command       Property file containing configs to be
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            config property file&gt;                   passed to Admin Client and Consumer.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --delete
+            </label>
+            <label style="font-size: 16;">
+                                               Pass in groups to delete topic
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            partition offsets and ownership
+        </p>
+        <p style="font-size: 16;">
+            information over the entire consumer
+        </p>
+        <p style="font-size: 16;">
+            group. For instance --group g1 --
+        </p>
+        <p style="font-size: 16;">
+            group g2
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --delete-offsets
+            </label>
+            <label style="font-size: 16;">
+                                       Delete offsets of consumer group.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            Supports one consumer group at the
+        </p>
+        <p style="font-size: 16;">
+            time, and multiple topics.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --describe
+            </label>
+            <label style="font-size: 16;">
+                                             Describe consumer group and list
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            offset lag (number of messages not
+        </p>
+        <p style="font-size: 16;">
+            yet processed) related to given
+        </p>
+        <p style="font-size: 16;">
+            group.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --dry-run
+            </label>
+            <label style="font-size: 16;">
+                                              Only show results without executing
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            changes on Consumer Groups.
+        </p>
+        <p style="font-size: 16;">
+            Supported operations: reset-offsets.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --execute
+            </label>
+            <label style="font-size: 16;">
+                                              Execute operation. Supported
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            operations: reset-offsets.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --export
+            </label>
+            <label style="font-size: 16;">
+                                               Export operation execution to a CSV
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            file. Supported operations: reset-
+        </p>
+        <p style="font-size: 16;">
+            offsets.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --from-file
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: path to CSV file&gt;  Reset offsets to values defined in CSV
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            file.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --group
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: consumer group&gt;        The consumer group we wish to act on.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --help
+            </label>
+            <label style="font-size: 16;">
+                                                 Print usage information.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --list
+            </label>
+            <label style="font-size: 16;">
+                                                 List all consumer groups.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --members
+            </label>
+            <label style="font-size: 16;">
+                                              Describe members of the group. This
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            option may be used with &#x27;--describe&#x27;
+        </p>
+        <p style="font-size: 16;">
+            and &#x27;--bootstrap-server&#x27; options
+        </p>
+        <p style="font-size: 16;">
+            only.
+        </p>
+        <p style="font-size: 16;">
+            Example: --bootstrap-server localhost:
+        </p>
+        <p style="font-size: 16;">
+            9092 --describe --group group1 --
+        </p>
+        <p style="font-size: 16;">
+            members
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --offsets
+            </label>
+            <label style="font-size: 16;">
+                                              Describe the group and list all topic
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            partitions in the group along with
+        </p>
+        <p style="font-size: 16;">
+            their offset lag. This is the
+        </p>
+        <p style="font-size: 16;">
+            default sub-action of and may be
+        </p>
+        <p style="font-size: 16;">
+            used with &#x27;--describe&#x27; and &#x27;--
+        </p>
+        <p style="font-size: 16;">
+            bootstrap-server&#x27; options only.
+        </p>
+        <p style="font-size: 16;">
+            Example: --bootstrap-server localhost:
+        </p>
+        <p style="font-size: 16;">
+            9092 --describe --group group1 --
+        </p>
+        <p style="font-size: 16;">
+            offsets
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --reset-offsets
+            </label>
+            <label style="font-size: 16;">
+                                        Reset offsets of consumer group.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            Supports one consumer group at the
+        </p>
+        <p style="font-size: 16;">
+            time, and instances should be
+        </p>
+        <p style="font-size: 16;">
+            inactive
+        </p>
+        <p style="font-size: 16;">
+            Has 2 execution options: --dry-run
+        </p>
+        <p style="font-size: 16;">
+            (the default) to plan which offsets
+        </p>
+        <p style="font-size: 16;">
+            to reset, and --execute to update
+        </p>
+        <p style="font-size: 16;">
+            the offsets. Additionally, the --
+        </p>
+        <p style="font-size: 16;">
+            export option is used to export the
+        </p>
+        <p style="font-size: 16;">
+            results to a CSV format.
+        </p>
+        <p style="font-size: 16;">
+            You must choose one of the following
+        </p>
+        <p style="font-size: 16;">
+            reset specifications: --to-datetime,
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --by-period,
+            </label>
+            <label style="font-size: 16;">
+                --to-earliest, --to-
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            latest, --shift-by, --from-file, --
+        </p>
+        <p style="font-size: 16;">
+            to-current.
+        </p>
+        <p style="font-size: 16;">
+            To define the scope use --all-topics
+        </p>
+        <p style="font-size: 16;">
+            or --topic. One scope must be
+        </p>
+        <p style="font-size: 16;">
+            specified unless you use &#x27;--from-
+        </p>
+        <p style="font-size: 16;">
+            file&#x27;.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --shift-by
+            </label>
+            <label style="font-size: 16;">
+                &lt;Long: number-of-offsets&gt;    Reset offsets shifting current offset
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            by &#x27;n&#x27;, where &#x27;n&#x27; can be positive or
+        </p>
+        <p style="font-size: 16;">
+            negative.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --state
+            </label>
+            <label style="font-size: 16;">
+                                                Describe the group state. This option
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            may be used with &#x27;--describe&#x27; and &#x27;--
+        </p>
+        <p style="font-size: 16;">
+            bootstrap-server&#x27; options only.
+        </p>
+        <p style="font-size: 16;">
+            Example: --bootstrap-server localhost:
+        </p>
+        <p style="font-size: 16;">
+            9092 --describe --group group1 --
+        </p>
+        <p style="font-size: 16;">
+            state
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --timeout
+            </label>
+            <label style="font-size: 16;">
+                &lt;Long: timeout (ms)&gt;          The timeout that can be set for some
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            use cases. For example, it can be
+        </p>
+        <p style="font-size: 16;">
+            used when describing the group to
+        </p>
+        <p style="font-size: 16;">
+            specify the maximum amount of time
+        </p>
+        <p style="font-size: 16;">
+            in milliseconds to wait before the
+        </p>
+        <p style="font-size: 16;">
+            group stabilizes (when the group is
+        </p>
+        <p style="font-size: 16;">
+            just created, or is going through
+        </p>
+        <p style="font-size: 16;">
+            some changes). (default: 5000)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --to-current
+            </label>
+            <label style="font-size: 16;">
+                                           Reset offsets to current offset.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --to-datetime
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: datetime&gt;        Reset offsets to offset from datetime.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            Format: &#x27;YYYY-MM-DDTHH:mm:SS.sss&#x27;
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --to-earliest
+            </label>
+            <label style="font-size: 16;">
+                                          Reset offsets to earliest offset.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --to-latest
+            </label>
+            <label style="font-size: 16;">
+                                            Reset offsets to latest offset.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --to-offset
+            </label>
+            <label style="font-size: 16;">
+                &lt;Long: offset&gt;              Reset offsets to a specific offset.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --topic
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: topic&gt;                 The topic whose consumer group
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            information should be deleted or
+        </p>
+        <p style="font-size: 16;">
+            topic whose should be included in
+        </p>
+        <p style="font-size: 16;">
+            the reset offset process. In `reset-
+        </p>
+        <p style="font-size: 16;">
+            offsets` case, partitions can be
+        </p>
+        <p style="font-size: 16;">
+            specified using this format: `topic1:
+        </p>
+        <p style="font-size: 16;">
+            0,1,2`, where 0,1,2 are the
+        </p>
+        <p style="font-size: 16;">
+            partition to be included in the
+        </p>
+        <p style="font-size: 16;">
+            process. Reset-offsets also supports
+        </p>
+        <p style="font-size: 16;">
+            multiple topic inputs.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --verbose
+            </label>
+            <label style="font-size: 16;">
+                                              Provide additional information, if
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            any, when describing the group. This
+        </p>
+        <p style="font-size: 16;">
+            option may be used with &#x27;--
+        </p>
+        <p style="font-size: 16;">
+            offsets&#x27;/&#x27;--members&#x27;/&#x27;--state&#x27; and
+        </p>
+        <p style="font-size: 16;">
+            &#x27;--bootstrap-server&#x27; options only.
+        </p>
+        <p style="font-size: 16;">
+            Example: --bootstrap-server localhost:
+        </p>
+        <p style="font-size: 16;">
+            9092 --describe --group group1 --
+        </p>
+        <p style="font-size: 16;">
+            members --verbose
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --version
+            </label>
+            <label style="font-size: 16;">
+                                              Display Kafka version.
+            </label>
+        </div>
+    </body>
+</html>

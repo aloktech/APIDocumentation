@@ -1,0 +1,273 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:	docker build [OPTIONS] PATH | URL | -
+        </label>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Build an image from a Dockerfile
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Options:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --add-host
+            </label>
+            <label style="font-size: 16;">
+                list           Add a custom host-to-IP mapping (host:ip)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --build-arg
+            </label>
+            <label style="font-size: 16;">
+                list          Set build-time variables
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cache-from
+            </label>
+            <label style="font-size: 16;">
+                strings      Images to consider as cache sources
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cgroup-parent
+            </label>
+            <label style="font-size: 16;">
+                string    Optional parent cgroup for the container
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --compress
+            </label>
+            <label style="font-size: 16;">
+                               Compress the build context using gzip
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cpu-period
+            </label>
+            <label style="font-size: 16;">
+                int          Limit the CPU CFS (Completely Fair
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            Scheduler) period
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cpu-quota
+            </label>
+            <label style="font-size: 16;">
+                int           Limit the CPU CFS (Completely Fair
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            Scheduler) quota
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -c,
+            </label>
+            <label style="font-size: 16;">
+                --cpu-shares int          CPU shares (relative weight)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cpuset-cpus
+            </label>
+            <label style="font-size: 16;">
+                string      CPUs in which to allow execution (0-3, 0,1)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cpuset-mems
+            </label>
+            <label style="font-size: 16;">
+                string      MEMs in which to allow execution (0-3, 0,1)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --disable-content-trust
+            </label>
+            <label style="font-size: 16;">
+                  Skip image verification (default true)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -f,
+            </label>
+            <label style="font-size: 16;">
+                --file string             Name of the Dockerfile (Default is
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            &#x27;PATH/Dockerfile&#x27;)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --force-rm
+            </label>
+            <label style="font-size: 16;">
+                               Always remove intermediate containers
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --iidfile
+            </label>
+            <label style="font-size: 16;">
+                string          Write the image ID to the file
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --isolation
+            </label>
+            <label style="font-size: 16;">
+                string        Container isolation technology
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --label
+            </label>
+            <label style="font-size: 16;">
+                list              Set metadata for an image
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -m,
+            </label>
+            <label style="font-size: 16;">
+                --memory bytes            Memory limit
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --memory-swap
+            </label>
+            <label style="font-size: 16;">
+                bytes       Swap limit equal to memory plus swap:
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            &#x27;-1&#x27; to enable unlimited swap
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --network
+            </label>
+            <label style="font-size: 16;">
+                string          Set the networking mode for the RUN
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            instructions during build (default &quot;default&quot;)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --no-cache
+            </label>
+            <label style="font-size: 16;">
+                               Do not use cache when building the image
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --pull
+            </label>
+            <label style="font-size: 16;">
+                                   Always attempt to pull a newer version of
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            the image
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -q,
+            </label>
+            <label style="font-size: 16;">
+                --quiet                   Suppress the build output and print image
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            ID on success
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --rm
+            </label>
+            <label style="font-size: 16;">
+                                     Remove intermediate containers after a
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            successful build (default true)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --security-opt
+            </label>
+            <label style="font-size: 16;">
+                strings    Security options
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --shm-size
+            </label>
+            <label style="font-size: 16;">
+                bytes          Size of /dev/shm
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -t,
+            </label>
+            <label style="font-size: 16;">
+                --tag list                Name and optionally a tag in the
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            &#x27;name:tag&#x27; format
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --target
+            </label>
+            <label style="font-size: 16;">
+                string           Set the target build stage to build.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --ulimit
+            </label>
+            <label style="font-size: 16;">
+                ulimit           Ulimit options (default [])
+            </label>
+        </div>
+    </body>
+</html>

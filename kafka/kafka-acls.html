@@ -1,0 +1,616 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            This tool helps to manage acls on kafka.
+        </p>
+        <p style="font-size: 16;">
+            Option                                   Description
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                ------
+            </label>
+            <label style="font-size: 16;">
+                                                  -----------
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --add
+            </label>
+            <label style="font-size: 16;">
+                                                   Indicates you are trying to add ACLs.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-host
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: allow-host&gt;        Host from which principals listed in --
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            allow-principal will have access. If
+        </p>
+        <p style="font-size: 16;">
+            you have specified --allow-principal
+        </p>
+        <p style="font-size: 16;">
+            then the default for this option
+        </p>
+        <p style="font-size: 16;">
+            will be set to * which allows access
+        </p>
+        <p style="font-size: 16;">
+            from all hosts.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --allow-principal
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: allow-        principal is in principalType:name
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            principal&gt;                               format. Note that principalType must
+        </p>
+        <p style="font-size: 16;">
+            be supported by the Authorizer being
+        </p>
+        <p style="font-size: 16;">
+            used. For example, User:* is the
+        </p>
+        <p style="font-size: 16;">
+            wild card indicating all users.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --authorizer
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: authorizer&gt;        Fully qualified class name of the
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            authorizer, defaults to kafka.
+        </p>
+        <p style="font-size: 16;">
+            security.authorizer.AclAuthorizer.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --authorizer-properties
+            </label>
+            <label style="font-size: 16;">
+                &lt;String:         REQUIRED: properties required to
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            authorizer-properties&gt;                   configure an instance of Authorizer.
+        </p>
+        <p style="font-size: 16;">
+            These are key=val pairs. For the
+        </p>
+        <p style="font-size: 16;">
+            default authorizer the example
+        </p>
+        <p style="font-size: 16;">
+            values are: zookeeper.
+        </p>
+        <p style="font-size: 16;">
+            connect=localhost:2181
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --bootstrap-server
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: server to    A list of host/port pairs to use for
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            connect to&gt;                              establishing the connection to the
+        </p>
+        <p style="font-size: 16;">
+            Kafka cluster. This list should be
+        </p>
+        <p style="font-size: 16;">
+            in the form host1:port1,host2:
+        </p>
+        <p style="font-size: 16;">
+            port2,... This config is required
+        </p>
+        <p style="font-size: 16;">
+            for acl management using admin
+        </p>
+        <p style="font-size: 16;">
+            client API.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --cluster
+            </label>
+            <label style="font-size: 16;">
+                                               Add/Remove cluster ACLs.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --command-config
+            </label>
+            <label style="font-size: 16;">
+                [String: command-       A property file containing configs to
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            config]                                  be passed to Admin Client.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --consumer
+            </label>
+            <label style="font-size: 16;">
+                                              Convenience option to add/remove ACLs
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            for consumer role. This will
+        </p>
+        <p style="font-size: 16;">
+            generate ACLs that allows READ,
+        </p>
+        <p style="font-size: 16;">
+            DESCRIBE on topic and READ on group.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --delegation-token
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: delegation-  Delegation token to which ACLs should
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            token&gt;                                   be added or removed. A value of *
+        </p>
+        <p style="font-size: 16;">
+            indicates ACL should apply to all
+        </p>
+        <p style="font-size: 16;">
+            tokens.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --deny-host
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: deny-host&gt;          Host from which principals listed in --
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            deny-principal will be denied
+        </p>
+        <p style="font-size: 16;">
+            access. If you have specified --deny-
+        </p>
+        <p style="font-size: 16;">
+            principal then the default for this
+        </p>
+        <p style="font-size: 16;">
+            option will be set to * which denies
+        </p>
+        <p style="font-size: 16;">
+            access from all hosts.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --deny-principal
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: deny-          principal is in principalType:name
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            principal&gt;                               format. By default anyone not added
+        </p>
+        <p style="font-size: 16;">
+            through --allow-principal is denied
+        </p>
+        <p style="font-size: 16;">
+            access. You only need to use this
+        </p>
+        <p style="font-size: 16;">
+            option as negation to already
+        </p>
+        <p style="font-size: 16;">
+            allowed set. Note that principalType
+        </p>
+        <p style="font-size: 16;">
+            must be supported by the Authorizer
+        </p>
+        <p style="font-size: 16;">
+            being used. For example if you
+        </p>
+        <p style="font-size: 16;">
+            wanted to allow access to all users
+        </p>
+        <p style="font-size: 16;">
+            in the system but not test-user you
+        </p>
+        <p style="font-size: 16;">
+            can define an ACL that allows access
+        </p>
+        <p style="font-size: 16;">
+            to User:* and specify --deny-
+        </p>
+        <p style="font-size: 16;">
+            principal=User:test@EXAMPLE.COM. AND
+        </p>
+        <p style="font-size: 16;">
+            PLEASE REMEMBER DENY RULES TAKES
+        </p>
+        <p style="font-size: 16;">
+            PRECEDENCE OVER ALLOW RULES.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --force
+            </label>
+            <label style="font-size: 16;">
+                                                 Assume Yes to all queries and do not
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            prompt.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --group
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: group&gt;                  Consumer Group to which the ACLs
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            should be added or removed. A value
+        </p>
+        <p style="font-size: 16;">
+            of * indicates the ACLs should apply
+        </p>
+        <p style="font-size: 16;">
+            to all groups.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --help
+            </label>
+            <label style="font-size: 16;">
+                                                  Print usage information.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --idempotent
+            </label>
+            <label style="font-size: 16;">
+                                            Enable idempotence for the producer.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            This should be used in combination
+        </p>
+        <p style="font-size: 16;">
+            with the --producer option. Note
+        </p>
+        <p style="font-size: 16;">
+            that idempotence is enabled
+        </p>
+        <p style="font-size: 16;">
+            automatically if the producer is
+        </p>
+        <p style="font-size: 16;">
+            authorized to a particular
+        </p>
+        <p style="font-size: 16;">
+            transactional-id.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --list
+            </label>
+            <label style="font-size: 16;">
+                                                  List ACLs for the specified resource,
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            use --topic &lt;topic&gt; or --group
+        </p>
+        <p style="font-size: 16;">
+            &lt;group&gt; or --cluster to specify a
+        </p>
+        <p style="font-size: 16;">
+            resource.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --operation
+            </label>
+            <label style="font-size: 16;">
+                &lt;String&gt;                     Operation that is being allowed or
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            denied. Valid operation names are:
+        </p>
+        <p style="font-size: 16;">
+            Describe
+        </p>
+        <p style="font-size: 16;">
+            DescribeConfigs
+        </p>
+        <p style="font-size: 16;">
+            Alter
+        </p>
+        <p style="font-size: 16;">
+            IdempotentWrite
+        </p>
+        <p style="font-size: 16;">
+            Read
+        </p>
+        <p style="font-size: 16;">
+            Delete
+        </p>
+        <p style="font-size: 16;">
+            Create
+        </p>
+        <p style="font-size: 16;">
+            ClusterAction
+        </p>
+        <p style="font-size: 16;">
+            All
+        </p>
+        <p style="font-size: 16;">
+            Write
+        </p>
+        <p style="font-size: 16;">
+            AlterConfigs
+        </p>
+        <p style="font-size: 16;">
+            (default: All)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --principal
+            </label>
+            <label style="font-size: 16;">
+                [String: principal]          List ACLs for the specified principal.
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            principal is in principalType:name
+        </p>
+        <p style="font-size: 16;">
+            format. Note that principalType must
+        </p>
+        <p style="font-size: 16;">
+            be supported by the Authorizer being
+        </p>
+        <p style="font-size: 16;">
+            used. Multiple --principal option
+        </p>
+        <p style="font-size: 16;">
+            can be passed.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --producer
+            </label>
+            <label style="font-size: 16;">
+                                              Convenience option to add/remove ACLs
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            for producer role. This will
+        </p>
+        <p style="font-size: 16;">
+            generate ACLs that allows WRITE,
+        </p>
+        <p style="font-size: 16;">
+            DESCRIBE and CREATE on topic.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --remove
+            </label>
+            <label style="font-size: 16;">
+                                                Indicates you are trying to remove
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            ACLs.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --resource-pattern-type
+            </label>
+            <label style="font-size: 16;">
+                                 The type of the resource pattern or
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            &lt;ANY|MATCH|LITERAL|PREFIXED&gt;             pattern filter. When adding acls,
+        </p>
+        <p style="font-size: 16;">
+            this should be a specific pattern
+        </p>
+        <p style="font-size: 16;">
+            type, e.g. &#x27;literal&#x27; or &#x27;prefixed&#x27;.
+        </p>
+        <p style="font-size: 16;">
+            When listing or removing acls, a
+        </p>
+        <p style="font-size: 16;">
+            specific pattern type can be used to
+        </p>
+        <p style="font-size: 16;">
+            list or remove acls from specific
+        </p>
+        <p style="font-size: 16;">
+            resource patterns, or use the filter
+        </p>
+        <p style="font-size: 16;">
+            values of &#x27;any&#x27; or &#x27;match&#x27;, where
+        </p>
+        <p style="font-size: 16;">
+            &#x27;any&#x27; will match any pattern type,
+        </p>
+        <p style="font-size: 16;">
+            but will match the resource name
+        </p>
+        <p style="font-size: 16;">
+            exactly, where as &#x27;match&#x27; will
+        </p>
+        <p style="font-size: 16;">
+            perform pattern matching to list or
+        </p>
+        <p style="font-size: 16;">
+            remove all acls that affect the
+        </p>
+        <p style="font-size: 16;">
+            supplied resource(s). WARNING:
+        </p>
+        <p style="font-size: 16;">
+            &#x27;match&#x27;, when used in combination
+        </p>
+        <p style="font-size: 16;">
+            with the &#x27;--remove&#x27; switch, should
+        </p>
+        <p style="font-size: 16;">
+            be used with care. (default: LITERAL)
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --topic
+            </label>
+            <label style="font-size: 16;">
+                &lt;String: topic&gt;                  topic to which ACLs should be added or
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            removed. A value of * indicates ACL
+        </p>
+        <p style="font-size: 16;">
+            should apply to all topics.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --transactional-id
+            </label>
+            <label style="font-size: 16;">
+                &lt;String:              The transactionalId to which ACLs
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            transactional-id&gt;                        should be added or removed. A value
+        </p>
+        <p style="font-size: 16;">
+            of * indicates the ACLs should apply
+        </p>
+        <p style="font-size: 16;">
+            to all transactionalIds.
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --version
+            </label>
+            <label style="font-size: 16;">
+                                               Display Kafka version.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --zk-tls-config-file
+            </label>
+            <label style="font-size: 16;">
+                &lt;String:            Identifies the file where ZooKeeper
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            Authorizer ZooKeeper TLS                 client TLS connectivity properties
+        </p>
+        <p style="font-size: 16;">
+            configuration&gt;                           for the authorizer are defined.  Any
+        </p>
+        <p style="font-size: 16;">
+            properties other than the following
+        </p>
+        <p style="font-size: 16;">
+            (with or without an &quot;authorizer.&quot;
+        </p>
+        <p style="font-size: 16;">
+            prefix) are ignored: zookeeper.
+        </p>
+        <p style="font-size: 16;">
+            clientCnxnSocket, zookeeper.ssl.
+        </p>
+        <p style="font-size: 16;">
+            cipher.suites, zookeeper.ssl.client.
+        </p>
+        <p style="font-size: 16;">
+            enable, zookeeper.ssl.crl.enable,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.enabled.protocols,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.endpoint.
+        </p>
+        <p style="font-size: 16;">
+            identification.algorithm, zookeeper.
+        </p>
+        <p style="font-size: 16;">
+            ssl.keystore.location, zookeeper.ssl.
+        </p>
+        <p style="font-size: 16;">
+            keystore.password, zookeeper.ssl.
+        </p>
+        <p style="font-size: 16;">
+            keystore.type, zookeeper.ssl.ocsp.
+        </p>
+        <p style="font-size: 16;">
+            enable, zookeeper.ssl.protocol,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.truststore.location,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.truststore.password,
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.ssl.truststore.type. Note
+        </p>
+        <p style="font-size: 16;">
+            that if SASL is not configured and
+        </p>
+        <p style="font-size: 16;">
+            zookeeper.set.acl is supposed to be
+        </p>
+        <p style="font-size: 16;">
+            true due to mutual certificate
+        </p>
+        <p style="font-size: 16;">
+            authentication being used then it is
+        </p>
+        <p style="font-size: 16;">
+            necessary to explicitly specify --
+        </p>
+        <p style="font-size: 16;">
+            authorizer-properties zookeeper.set.
+        </p>
+        <p style="font-size: 16;">
+            acl=true
+        </p>
+    </body>
+</html>

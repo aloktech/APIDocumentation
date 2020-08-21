@@ -1,0 +1,239 @@
+<html>
+    <body>
+        <p style="font-size: 16;">
+            Analyze Istio configuration and print validation messages
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Usage:
+        </label>
+        <p style="font-size: 16;">
+            istioctl analyze &lt;file&gt;... [flags]
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Examples:
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Analyze the current live cluster
+        </p>
+        <p style="font-size: 16;">
+            istioctl analyze
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Analyze the current live cluster, simulating the effect of applying additional yaml files
+        </p>
+        <p style="font-size: 16;">
+            istioctl analyze a.yaml b.yaml my-app-config/
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Analyze the current live cluster, simulating the effect of applying a directory of config recursively
+        </p>
+        <p style="font-size: 16;">
+            istioctl analyze --recursive my-istio-config/
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Analyze yaml files without connecting to a live cluster
+        </p>
+        <p style="font-size: 16;">
+            istioctl analyze --use-kube=false a.yaml b.yaml my-app-config/
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Analyze the current live cluster and suppress PodMissingProxy for pod mypod in namespace &#x27;testing&#x27;.
+        </p>
+        <p style="font-size: 16;">
+            istioctl analyze -S &quot;IST0103=Pod mypod.testing&quot;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # Analyze the current live cluster and suppress PodMissingProxy for all pods in namespace &#x27;testing&#x27;,
+        </p>
+        <p style="font-size: 16;">
+            # and suppress MisplacedAnnotation on deployment foobar in namespace default.
+        </p>
+        <p style="font-size: 16;">
+            istioctl analyze -S &quot;IST0103=Pod *.testing&quot; -S &quot;IST0107=Deployment foobar.default&quot;
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            # List available analyzers
+        </p>
+        <p style="font-size: 16;">
+            istioctl analyze -L
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            
+        </p>
+        <label style="font-weight: bold; font-size: 18;">
+            Flags:
+        </label>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -A,
+            </label>
+            <label style="font-size: 16;">
+                --all-namespaces            Analyze all namespaces
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --color
+            </label>
+            <label style="font-size: 16;">
+                                    Default true.  Disable with &#x27;=false&#x27; or set $TERM to dumb
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --failure-threshold
+            </label>
+            <label style="font-size: 16;">
+                Level   The severity level of analysis at which to set a non-zero exit code. Valid values: [Info Warn Error] (default Warn)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -h,
+            </label>
+            <label style="font-size: 16;">
+                --help                      help for analyze
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -L,
+            </label>
+            <label style="font-size: 16;">
+                --list-analyzers            List the analyzers available to run. Suppresses normal execution.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --meshConfigFile
+            </label>
+            <label style="font-size: 16;">
+                string     Overrides the mesh config values to use for analysis.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -o,
+            </label>
+            <label style="font-size: 16;">
+                --output string             Output format: one of [json log yaml] (default &quot;log&quot;)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --output-threshold
+            </label>
+            <label style="font-size: 16;">
+                Level    The severity level of analysis at which to display messages. Valid values: [Info Warn Error] (default Info)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -R,
+            </label>
+            <label style="font-size: 16;">
+                --recursive                 Process directory arguments recursively. Useful when you want to analyze related manifests organized within the same directory.
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -S,
+            </label>
+            <label style="font-size: 16;">
+                --suppress stringArray      Suppress reporting a message code on a specific resource. Values are supplied in the form &lt;code&gt;=&lt;resource&gt; (e.g. &#x27;--suppress &quot;IST0102=DestinationRule primary-dr.default&quot;&#x27;). Can be repeated. You can include the wildcard character &#x27;*&#x27; to support a partial match (e.g. &#x27;--suppress &quot;IST0102=DestinationRule *.default&quot; ).
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --timeout
+            </label>
+            <label style="font-size: 16;">
+                duration          the duration to wait before failing (default 30s)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -k,
+            </label>
+            <label style="font-size: 16;">
+                --use-kube                  Use live Kubernetes cluster for analysis. Set --use-kube=false to analyze files only. (default true)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -v,
+            </label>
+            <label style="font-size: 16;">
+                --verbose                   Enable verbose output
+            </label>
+        </div>
+        <p style="font-size: 16;">
+            
+        </p>
+        <p style="font-size: 16;">
+            Global Flags:
+        </p>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                --context
+            </label>
+            <label style="font-size: 16;">
+                string          The name of the kubeconfig context to use
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -i,
+            </label>
+            <label style="font-size: 16;">
+                --istioNamespace string   Istio system namespace (default &quot;istio-system&quot;)
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -c,
+            </label>
+            <label style="font-size: 16;">
+                --kubeconfig string       Kubernetes configuration file
+            </label>
+        </div>
+        <div>
+            <label style="font-size: 16;font-weight:bold;">
+                -n,
+            </label>
+            <label style="font-size: 16;">
+                --namespace string        Config namespace
+            </label>
+        </div>
+    </body>
+</html>
